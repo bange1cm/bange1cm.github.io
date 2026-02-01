@@ -45,22 +45,40 @@
 	button {
 		font-family: inherit;
 	}
+
+	.button-primary {
+		background-color: var(--color-primary);
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.2s ease;
+	}
+
+	.button-primary:hover {
+		background-color: var(--color-dark);
+		transform: translateY(-2px);
+	}
 </style>
 
 <style is:global>
 	:root {
 		/* Color palette */
-		--color-primary: #4a4e69; /* hero start */
-		--color-secondary: #9a8c98; /* hero end */
+		--color-primary: #4a4e69; 
+		--color-secondary: #9a8c98; 
 		--bg-color: #ffffff;
 		--text-color: #1f2937;
-		--color-light: #f2e9e4;
+		--color-light: #F2E9E4;
 		--color-dark: #22223b;
+		--color-lightest:#F9F5F3;
 
 		/* Navigation */
 		--nav-text: rgba(255,255,255,0.95);
 
 		/* Spacing */
 		--container-max-width: 1200px;
+
+		
 	}
 </style>

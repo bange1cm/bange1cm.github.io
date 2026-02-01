@@ -9,7 +9,7 @@ import Navigation from '../components/Navigation.astro';
 		<header class="resume-header">
 			<h1>My Resume</h1>
 			<div class="resume-links">
-				<a href="/resume.pdf" class="button" download>Download PDF</a>
+				<a href="/resume.pdf" class="button-primary" download>Download PDF</a>
 			</div>
 		</header>
 
@@ -17,10 +17,10 @@ import Navigation from '../components/Navigation.astro';
 			<h2>Professional Experience</h2>
 			<div class="experience-item">
 				<div class="experience-header">
-					<h3>Job Title</h3>
-					<span class="date">YYYY - Present</span>
+					<h3>UX Intern</h3>
+					<span class="date">2025 - Present</span>
 				</div>
-				<p class="company">Company Name</p>
+				<p class="company">Auto-Owners Insurance</p>
 				<p class="description">
 					Add your job description, responsibilities, and achievements here. Update this with your actual experience.
 				</p>
@@ -28,10 +28,22 @@ import Navigation from '../components/Navigation.astro';
 
 			<div class="experience-item">
 				<div class="experience-header">
-					<h3>Previous Position</h3>
-					<span class="date">YYYY - YYYY</span>
+					<h3>Software Development Intern</h3>
+					<span class="date">2024</span>
 				</div>
-				<p class="company">Previous Company</p>
+				<p class="company">Auto-Owners Insurance</p>
+				<p class="description">
+					Add details about your previous role, key accomplishments, and what you learned.
+				</p>
+			</div>
+
+            
+			<div class="experience-item">
+				<div class="experience-header">
+					<h3>Systems Analyst Intern</h3>
+					<span class="date">2023</span>
+				</div>
+				<p class="company">LMCU</p>
 				<p class="description">
 					Add details about your previous role, key accomplishments, and what you learned.
 				</p>
@@ -42,12 +54,12 @@ import Navigation from '../components/Navigation.astro';
 			<h2>Education</h2>
 			<div class="experience-item">
 				<div class="experience-header">
-					<h3>Degree Name</h3>
-					<span class="date">Graduation Year</span>
+					<h3>Bachelor of Science in Information Technology</h3>
+					<span class="date">2026</span>
 				</div>
-				<p class="company">University Name</p>
+				<p class="company">Central Michigan University</p>
 				<p class="description">
-					Add relevant coursework, honors, or achievements during your studies.
+                    Minors in Computer Science and Multimedia Design. CMU Honors Program. GPA: 4.0/4.0
 				</p>
 			</div>
 		</section>
@@ -56,19 +68,38 @@ import Navigation from '../components/Navigation.astro';
 			<h2>Skills</h2>
 			<div class="skills-grid">
 				<div class="skill-category">
-					<h3>Technical Skills</h3>
+					<h3>UX</h3>
 					<ul>
-						<li>Skill 1</li>
-						<li>Skill 2</li>
-						<li>Skill 3</li>
+						<li>Usability Studies</li>
+						<li>User Interviews</li>
+						<li>Accessibility (WCGA)</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Design Thinking</li>
+                        <li>Personas</li>
 					</ul>
 				</div>
 				<div class="skill-category">
-					<h3>Soft Skills</h3>
+					<h3>Tools</h3>
 					<ul>
-						<li>Communication</li>
-						<li>Leadership</li>
-						<li>Problem Solving</li>
+						<li>Figma</li>
+						<li>Axure</li>
+						<li>Lucid</li>
+                        <li>EnjoyHQ</li>
+                        <li>UserZoom</li>
+                        <li>Adobe Creative Suite</li>
+                        <li>Git</li>
+					</ul>
+				</div>
+                <div class="skill-category">
+					<h3>Programming</h3>
+					<ul>
+						<li>React</li>
+                        <li>HTML/CSS</li>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                        <li>XML</li>
 					</ul>
 				</div>
 			</div>
@@ -89,36 +120,13 @@ import Navigation from '../components/Navigation.astro';
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 40px;
-		border-bottom: 2px solid #e5e7eb;
 		padding-bottom: 20px;
 	}
 
 	.resume-header h1 {
 		margin: 0;
 		font-size: 2.5em;
-		color: #1f2937;
-	}
-
-	.resume-links {
-		display: flex;
-		gap: 12px;
-	}
-
-	.button {
-		display: inline-block;
-		padding: 10px 20px;
-		background-color: #3b82f6;
-		color: white;
-		text-decoration: none;
-		border-radius: 6px;
-		transition: background-color 0.2s;
-		border: none;
-		cursor: pointer;
-		font-size: 1em;
-	}
-
-	.button:hover {
-		background-color: #2563eb;
+		color: var(--color-dark);
 	}
 
 	.resume-section {
@@ -127,7 +135,6 @@ import Navigation from '../components/Navigation.astro';
 
 	.resume-section h2 {
 		font-size: 1.5em;
-		color: #1f2937;
 		margin-bottom: 20px;
 		border-bottom: 1px solid #d1d5db;
 		padding-bottom: 10px;
@@ -137,7 +144,7 @@ import Navigation from '../components/Navigation.astro';
 		margin-bottom: 25px;
 		padding: 15px;
 		background-color: #f9fafb;
-		border-left: 4px solid #3b82f6;
+		border-left: 4px solid var(--color-secondary);
 		border-radius: 4px;
 	}
 
@@ -149,9 +156,7 @@ import Navigation from '../components/Navigation.astro';
 	}
 
 	.experience-header h3 {
-		margin: 0;
-		color: #1f2937;
-		font-size: 1.1em;
+		margin: 0;		font-size: 1.1em;
 	}
 
 	.date {

@@ -5,37 +5,36 @@
 <section class="contact-preview">
 	<div class="contact-preview-container">
 		<h2>Let's Connect</h2>
-		<p>Have a project in mind or just want to say hello?</p>
 		
 		<div class="quick-contact">
 			<div class="contact-info">
-				<a href="mailto:your.email@example.com" class="contact-link">
+				<a href="mailto:bangecor0@gmail.com" class="contact-link">
 					<span class="label">Email</span>
-					<span class="value">your.email@example.com</span>
+					<span class="value">bangecor0@gmail.com</span>
 				</a>
 			</div>
 			<div class="contact-info">
-				<a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+				<a href="https://www.linkedin.com/in/cora-yerke" target="_blank" class="contact-link">
 					<span class="label">LinkedIn</span>
-					<span class="value">linkedin.com/in/yourprofile</span>
+					<span class="value">linkedin.com/in/cora-yerke</span>
 				</a>
 			</div>
 			<div class="contact-info">
-				<a href="https://github.com/yourprofile" target="_blank" class="contact-link">
+				<a href="https://github.com/bange1cm" target="_blank" class="contact-link">
 					<span class="label">GitHub</span>
-					<span class="value">github.com/yourprofile</span>
+					<span class="value">https://github.com/bange1cm</span>
 				</a>
 			</div>
 		</div>
 
-		<a href="/contact" class="cta-button">View Full Contact Info</a>
+		<a href="/contact" class="button-primary cta-button">View Full Contact Info</a>
 	</div>
 </section>
 
 <style>
 	.contact-preview {
 		padding: 80px 20px;
-		background-color: #f3f4f6;
+		background-color: var(--color-lightest);
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		text-align: center;
 	}
@@ -53,7 +52,7 @@
 
 	.contact-preview > div > p {
 		font-size: 1.1em;
-		color: #6b7280;
+		color: var(--color-light);
 		margin: 0 0 40px 0;
 	}
 
@@ -80,12 +79,12 @@
 	}
 
 	.contact-link:hover {
-		color: #3b82f6;
+		color: var(--color-primary);
 	}
 
 	.contact-link .label {
 		font-size: 0.9em;
-		color: #9ca3af;
+		color: var(--color-primary);
 		font-weight: 600;
 		margin-bottom: 5px;
 		text-transform: uppercase;
@@ -99,25 +98,14 @@
 	}
 
 	.contact-link:hover .value {
-		color: #3b82f6;
+		color: var(--color-secondary);
 	}
 
 	.cta-button {
 		display: inline-block;
 		padding: 14px 32px;
-		background-color: #3b82f6;
-		color: white;
-		text-decoration: none;
-		border-radius: 6px;
-		font-weight: 600;
-		transition: background-color 0.2s, transform 0.2s;
-		font-size: 1em;
 	}
 
-	.cta-button:hover {
-		background-color: #2563eb;
-		transform: translateY(-2px);
-	}
 
 	@media (max-width: 768px) {
 		.contact-preview {

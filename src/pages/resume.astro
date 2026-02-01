@@ -1,0 +1,207 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout>
+	<Navigation />
+	<div class="resume-container">
+		<header class="resume-header">
+			<h1>My Resume</h1>
+			<div class="resume-links">
+				<a href="/resume.pdf" class="button" download>Download PDF</a>
+			</div>
+		</header>
+
+		<section class="resume-section">
+			<h2>Professional Experience</h2>
+			<div class="experience-item">
+				<div class="experience-header">
+					<h3>Job Title</h3>
+					<span class="date">YYYY - Present</span>
+				</div>
+				<p class="company">Company Name</p>
+				<p class="description">
+					Add your job description, responsibilities, and achievements here. Update this with your actual experience.
+				</p>
+			</div>
+
+			<div class="experience-item">
+				<div class="experience-header">
+					<h3>Previous Position</h3>
+					<span class="date">YYYY - YYYY</span>
+				</div>
+				<p class="company">Previous Company</p>
+				<p class="description">
+					Add details about your previous role, key accomplishments, and what you learned.
+				</p>
+			</div>
+		</section>
+
+		<section class="resume-section">
+			<h2>Education</h2>
+			<div class="experience-item">
+				<div class="experience-header">
+					<h3>Degree Name</h3>
+					<span class="date">Graduation Year</span>
+				</div>
+				<p class="company">University Name</p>
+				<p class="description">
+					Add relevant coursework, honors, or achievements during your studies.
+				</p>
+			</div>
+		</section>
+
+		<section class="resume-section">
+			<h2>Skills</h2>
+			<div class="skills-grid">
+				<div class="skill-category">
+					<h3>Technical Skills</h3>
+					<ul>
+						<li>Skill 1</li>
+						<li>Skill 2</li>
+						<li>Skill 3</li>
+					</ul>
+				</div>
+				<div class="skill-category">
+					<h3>Soft Skills</h3>
+					<ul>
+						<li>Communication</li>
+						<li>Leadership</li>
+						<li>Problem Solving</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</div>
+</Layout>
+
+<style>
+	.resume-container {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 40px 20px;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+
+	.resume-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 40px;
+		border-bottom: 2px solid #e5e7eb;
+		padding-bottom: 20px;
+	}
+
+	.resume-header h1 {
+		margin: 0;
+		font-size: 2.5em;
+		color: #1f2937;
+	}
+
+	.resume-links {
+		display: flex;
+		gap: 12px;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 10px 20px;
+		background-color: #3b82f6;
+		color: white;
+		text-decoration: none;
+		border-radius: 6px;
+		transition: background-color 0.2s;
+		border: none;
+		cursor: pointer;
+		font-size: 1em;
+	}
+
+	.button:hover {
+		background-color: #2563eb;
+	}
+
+	.resume-section {
+		margin-bottom: 40px;
+	}
+
+	.resume-section h2 {
+		font-size: 1.5em;
+		color: #1f2937;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #d1d5db;
+		padding-bottom: 10px;
+	}
+
+	.experience-item {
+		margin-bottom: 25px;
+		padding: 15px;
+		background-color: #f9fafb;
+		border-left: 4px solid #3b82f6;
+		border-radius: 4px;
+	}
+
+	.experience-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 8px;
+	}
+
+	.experience-header h3 {
+		margin: 0;
+		color: #1f2937;
+		font-size: 1.1em;
+	}
+
+	.date {
+		color: #6b7280;
+		font-size: 0.9em;
+		font-weight: 500;
+	}
+
+	.company {
+		margin: 5px 0;
+		color: #374151;
+		font-weight: 600;
+	}
+
+	.description {
+		margin: 10px 0 0 0;
+		color: #4b5563;
+		line-height: 1.6;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 20px;
+	}
+
+	.skill-category {
+		padding: 15px;
+		background-color: #f9fafb;
+		border-radius: 6px;
+	}
+
+	.skill-category h3 {
+		margin-top: 0;
+		color: #1f2937;
+	}
+
+	.skill-category ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.skill-category li {
+		padding: 8px 0;
+		color: #374151;
+		border-bottom: 1px solid #e5e7eb;
+	}
+
+	.skill-category li:last-child {
+		border-bottom: none;
+	}
+</style>

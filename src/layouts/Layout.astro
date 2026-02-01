@@ -6,18 +6,61 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>My Portfolio</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
 	html,
 	body {
-		margin: 0;
 		width: 100%;
 		height: 100%;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+		background-color: var(--bg-color, #ffffff);
+		color: var(--text-color, #1f2937);
+	}
+
+	body {
+		line-height: 1.6;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	button {
+		font-family: inherit;
+	}
+</style>
+
+<style is:global>
+	:root {
+		/* Color palette */
+		--color-primary: #4a4e69; /* hero start */
+		--color-secondary: #9a8c98; /* hero end */
+		--bg-color: #ffffff;
+		--text-color: #1f2937;
+		--color-light: #f2e9e4;
+		--color-dark: #22223b;
+
+		/* Navigation */
+		--nav-text: rgba(255,255,255,0.95);
+
+		/* Spacing */
+		--container-max-width: 1200px;
 	}
 </style>

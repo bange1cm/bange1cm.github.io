@@ -55,7 +55,6 @@ export const projects: Project[] = [
     description:
       "My Cows! is a mobile game developed at SpartaHack, Michigan State University’s annual hackathon. After spending too much time on phones during road trips, we wanted to create a competition to encourage passangers to look out the window and enjoy the scenery. ",
     image: "/projects/MyCows.png",
-    video: "https://youtu.be/AZbAEzI8MvU",
     technologies: ["React", "Node.js", "Convex"],
     link: "https://devpost.com/software/my-cows-roadtrip-wrapped?ref_content=my-projects-tab&ref_feature=my_projects",
     details: `For our project, we created an interface for fun road trip game called "My Cows!" In this game, different players keep track of how many cows they spot on the trip, and are able increase their cows, decrease other players' cows, and turn their cows into hamburgers. The goal is to have as many hamburgers as possible at the end of the road trip. We did not invent the road trip game but instead made a website for users to be able create and join games, making keeping track of everyone's cows much easier and more fun!

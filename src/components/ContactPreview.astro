@@ -2,7 +2,7 @@
 // Contact preview/footer section component for home page
 ---
 
-<section class="contact-preview">
+<section class="contact-preview" id="contact">
 	<div class="contact-preview-container">
 		<h2>Let's Connect</h2>
 		
@@ -26,8 +26,6 @@
 				</a>
 			</div>
 		</div>
-
-		<a href="/contact" class="button-primary cta-button">View Full Contact Info</a>
 	</div>
 </section>
 
@@ -47,7 +45,7 @@
 	.contact-preview h2 {
 		font-size: 2.2em;
 		margin: 0 0 10px 0;
-		color: #1f2937;
+		color: var(--color-dark);
 	}
 
 	.contact-preview > div > p {
@@ -79,12 +77,11 @@
 	}
 
 	.contact-link:hover {
-		color: var(--color-primary);
+		color: var(--color-secondary);
 	}
 
 	.contact-link .label {
 		font-size: 0.9em;
-		color: var(--color-primary);
 		font-weight: 600;
 		margin-bottom: 5px;
 		text-transform: uppercase;
@@ -93,8 +90,9 @@
 
 	.contact-link .value {
 		font-size: 1em;
-		color: #1f2937;
+		color: var(--text-color);
 		word-break: break-word;
+		text-decoration: underline;
 	}
 
 	.contact-link:hover .value {

@@ -1,88 +1,48 @@
----
 // Project data structure
 export interface Project {
-	id: string;
-	title: string;
-	category: string;
-	description: string;
-	image?: string;
-	technologies?: string[];
-	link?: string;
-	details?: string;
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image?: string;
+  video?: string;
+  technologies?: string[];
+  link?: string;
+  details?: string | string[];
 }
 
 export const projects: Project[] = [
-	// Coding Projects
-	{
-		id: 'portfolio-website',
-		title: 'Personal Portfolio Website',
-		category: 'Coding',
-		description: 'A responsive portfolio website built with Astro and Tailwind CSS',
-		image: '/projects/portfolio.jpg',
-		technologies: ['Astro', 'JavaScript', 'CSS'],
-		link: 'https://github.com',
-		details: 'Built a personal portfolio website showcasing my projects and skills. Features responsive design, dynamic routing, and optimized performance.'
-	},
-	{
-		id: 'ecommerce-app',
-		title: 'E-commerce Application',
-		category: 'Coding',
-		description: 'Full-stack e-commerce platform with product management and checkout',
-		image: '/projects/ecommerce.jpg',
-		technologies: ['React', 'Node.js', 'MongoDB'],
-		link: 'https://github.com',
-		details: 'Developed a full-featured e-commerce platform with user authentication, product catalog, shopping cart, and secure payment processing.'
-	},
+  // Coding Projects
+  {
+    id: "Labs@Home",
+    title: "Labs@Home Application",
+    category: "Coding, UX",
+    description:
+      "Labs@Home is a full-stack desktop application designed to help CMU computer science students complete lab assignments using virtual machines, without needing to understand all the technical complexity behind the scenes. This project started from Professor Patrick Seeling’s research on virtualized lab environments and delta files. I took that foundation and built a full-stack application with a strong emphasis on UX-driven development.",
+    image: "/projects/Labs@Home.png",
+    video: "https://youtu.be/AZbAEzI8MvU",
+    technologies: ["Tauri", "React", "Rust", "React Router", "React Bootstrap"],
+    link: "https://github.com/bange1cm/Labs-Home",
+    details: `The Process: 
+		1. Designed and developed a cross-platform desktop app using Tauri v2
+		2. Built a Rust backend to handle system-level logic like virtual machines and file management
+		3. Created a React frontend focused on minimalism and ease of use
+		4. Utilized the 5 step Design Process (Empathize, Define, Ideate, Prototype, Test)
+		5. Applied UX design principles and usability heuristics to create clarity
+		6. Conducted usability testing with real students and iterated based on feedback
 
-	// UX Projects
-	{
-		id: 'app-redesign',
-		title: 'Mobile App Redesign',
-		category: 'UX',
-		description: 'UX redesign of a financial mobile application',
-		image: '/projects/ux-redesign.jpg',
-		technologies: ['Figma', 'User Research'],
-		details: 'Conducted user research and created a comprehensive UX redesign for a financial app, improving user engagement by 40%.'
-	},
+		This project challenged me to take a very technical system and design an experience that actually makes sense to users. I’m so excited to have the application utilized in upcoming semesters!
 
-	// Graphic Design Projects
-	{
-		id: 'brand-identity',
-		title: 'Brand Identity Design',
-		category: 'Graphic Design',
-		description: 'Complete brand identity including logo, color palette, and guidelines',
-		image: '/projects/branding.jpg',
-		technologies: ['Adobe Creative Suite', 'Illustrator'],
-		details: 'Designed a complete brand identity system including logo, typography, color palette, and brand guidelines for a tech startup.'
-	},
-
-	// Video Production Projects
-	{
-		id: 'product-video',
-		title: 'Product Demo Video',
-		category: 'Video Production',
-		description: 'Professional product demonstration video',
-		image: '/projects/video-demo.jpg',
-		technologies: ['Premiere Pro', 'After Effects'],
-		details: 'Produced a high-quality product demo video with animations and color grading for a software company.'
-	},
-
-	// Ceramics Projects
-	{
-		id: 'ceramic-series',
-		title: 'Ceramic Pottery Series',
-		category: 'Ceramics',
-		description: 'Hand-thrown ceramic pieces exploring texture and form',
-		image: '/projects/ceramics.jpg',
-		details: 'A collection of hand-thrown ceramic pieces exploring various techniques and glazing methods.'
-	}
+		Huge thanks to Professor Patrick Seeling for the guidance and support throughout this project. Additional thanks to the Central Michigan University Honors Program for supporting this work and funding the poster presentation.`,
+  },
+  // Add more projects as needed
 ];
 
 export function getCategories(): string[] {
-	const categories = new Set(projects.map(p => p.category));
-	return Array.from(categories).sort();
+  const categories = new Set(projects.map((p) => p.category));
+  return Array.from(categories).sort();
 }
 
 export function getProjectsByCategory(category: string): Project[] {
-	return projects.filter(p => p.category === category);
+  return projects.filter((p) => p.category === category);
 }

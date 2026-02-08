@@ -101,7 +101,7 @@ export async function getStaticPaths() {
 			{project.link && (
 				<section class="project-section">
 					<h2>View Project</h2>
-					<a href={project.link} target="_blank" class="button">Visit Project →</a>
+					<a class="button-primary" href={project.link} target="_blank">Visit Project →</a>
 				</section>
 			)}
 		</div>
@@ -147,8 +147,8 @@ export async function getStaticPaths() {
 
 	.category-badge {
 		display: inline-block;
-		background-color: #3b82f6;
-		color: white;
+		background-color: var(--color-light);
+		color: var(--text-color);
 		padding: 8px 16px;
 		border-radius: 20px;
 		font-size: 0.9em;
@@ -220,19 +220,17 @@ export async function getStaticPaths() {
 
 	.tech-item {
 		display: inline-block;
-		background-color: #f0f4ff;
-		color: #1e40af;
+		background-color: var(--color-light);
+		color: var(--text-color);
 		padding: 8px 16px;
 		border-radius: 6px;
 		font-weight: 500;
-		border: 1px solid #dbeafe;
+		border: 1px solid var(--color-border);
 	}
 
 	.button {
 		display: inline-block;
 		padding: 12px 24px;
-		background-color: #3b82f6;
-		color: white;
 		text-decoration: none;
 		border-radius: 6px;
 		transition: background-color 0.2s;
@@ -243,6 +241,6 @@ export async function getStaticPaths() {
 	}
 
 	.button:hover {
-		background-color: #2563eb;
+		background-color: var(--color-primary-hover);
 	}
 </style>

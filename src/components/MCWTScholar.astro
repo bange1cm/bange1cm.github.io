@@ -1,0 +1,91 @@
+---
+// MCWT Scholar component with image on left and text on right
+---
+
+<section id="mcwt-scholar" class="mcwt-scholar">
+	<div class="mcwt-container">
+		<!-- Image Section -->
+		<div class="image-section">
+			<img src="/mcwt/award.jpg" alt="MCWT Scholar Award" class="mcwt-image" />
+		</div>
+
+		<!-- Text Section -->
+		<div class="text-section">
+			<h2 class="section-title">MCWT Scholar</h2>
+			<p>
+                The Michigan Council of Women in Technology (MCWT) is an organization dedicated to empowering women to pursue careers in technology and leadership roles.
+            </p>
+            <p>
+                As an MCWT Scholar, I have been recognized for my academic achievements and work towards a successful career in technology. The scholarship has provided me with financial support, mentorship opportunities, and access to a network of professionals in the tech industry.
+            </p>
+            <p>
+                I was further honored by being selected to speak at the MCWT Breakfast Roadshow to share my experience as a scholar.
+            </p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.mcwt-scholar {
+		padding: 80px 20px;
+		background-color: #ffffff;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+
+	.mcwt-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		align-items: center;
+	}
+
+	/* Image Section */
+	.image-section {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.mcwt-image {
+		width: 300px;
+		height: auto;
+		border-radius: 12px;
+		background: white;
+		border: 2px solid #e5e7eb;
+	}
+
+	/* Text Section */
+	.text-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.text-section .section-title {
+		font-size: 2.5em;
+		margin: 0 0 20px 0;
+		color: #1f2937;
+		text-align: left;
+	}
+
+	.text-section p {
+		font-size: 1.05em;
+		line-height: 1.8;
+		color: #4b5563;
+		margin: 0;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.mcwt-container {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
+
+		.text-section .section-title {
+			font-size: 1.8em;
+		}
+	}
+</style>

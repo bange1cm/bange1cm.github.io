@@ -157,7 +157,6 @@ export async function getStaticPaths() {
 
 	.project-image-large {
 		width: 100%;
-		height: 400px;
 		margin-bottom: 40px;
 		border-radius: 8px;
 		overflow: hidden;
@@ -166,8 +165,8 @@ export async function getStaticPaths() {
 
 	.project-image-large img {
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		height: auto;
+		display: block;
 	}
 
 	.project-video {

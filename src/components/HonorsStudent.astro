@@ -1,0 +1,112 @@
+---
+// Honors Student component with logo and text section
+---
+
+<section id="honors-student" class="honors-student">
+	<div class="honors-container">
+		<!-- Text Section -->
+		<div class="text-section">
+			<h2 class="section-title">Honors Student</h2>
+			<p>
+                The Honors Program is a competitive academic program that offers high-achieving students the opportunity to engage in advanced coursework, research, and community service.
+            </p>
+            <p>
+                As an honors student at Central Michigan University, I have taken unexpected classes, like ASL and the Virtues of the Korean Independence Movement.
+            </p>
+            <p>
+                I studied abroad in Athens, Greece, for four months and embraced the chance to learn about different cultures and perspectives. 
+            </p>
+            <p>
+                I conducted a capston project, combining my interest in UX and coding to develop a desktop application that helps CMU students complete homework for networking and computer science classes. 
+            </p>
+            <br>
+            <p >
+                 <a  class="button-primary" href="/projects/Labs@Home">Learn more about my capstone, Labs@Home!</a>
+            </p>
+		</div>
+
+		<!-- Logo Section -->
+		<div class="logo-section">
+			<img src="/hon/logo.png" alt="Honors Student Logo" class="honors-logo" />
+		</div>
+	</div>
+</section>
+
+<style>
+	.honors-student {
+		padding: 80px 20px;
+		background-color: #ffffff;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+
+	.honors-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		align-items: center;
+	}
+
+	/* Text Section */
+	.text-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.text-section .section-title {
+		font-size: 2.5em;
+		margin: 0 0 20px 0;
+		color: #1f2937;
+		text-align: left;
+	}
+
+	.text-section p {
+		font-size: 1.05em;
+		line-height: 1.8;
+		color: #4b5563;
+		margin: 0;
+        margin-bottom: 10px;
+	}
+
+    .capstone-link{
+        text-decoration: underline;
+    }
+
+	.capstone-link:hover {
+		color: var(--color-secondary);
+	}
+
+
+	/* Logo Section */
+	.logo-section {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.honors-logo {
+		max-width: 75%;
+		height: auto;
+		border-radius: 12px;
+		background: white;
+		padding: 20px;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.honors-container {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
+
+		.text-section .section-title {
+			font-size: 1.8em;
+		}
+
+		.honors-logo {
+			max-width: 300px;
+		}
+	}
+</style>

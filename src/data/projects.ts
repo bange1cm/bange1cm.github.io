@@ -61,6 +61,17 @@ export const projects: Project[] = [
 	On the technical side, we used next.js framework and used convex for our backend database. Our graphics and our database were set up by my teammates. 
 	I really enjoyed taking the project from the ground up by deciding how the game would be translated to a mobile version, what features were required, and what we needed to do to ensure a good game. After outlining the specs, I spent most of my time creating the front end with React. `,
   },
+  {
+    id: "AfricanForestElephant",
+    title: "African Forest Elephant Logo",
+    category: "Graphic Design",
+    description:
+      "Logo design for the African Forest Elephant. The design incorporates earthy tones and natural elements to reflect the elephant's habitat and conservation efforts.",
+    image: "/projects/AfricanForestElephant.png",
+    technologies: ["Adobe Illustrator", "Adobe InDesign"],
+    details: `To be finished`,
+  },
+
   // Add more projects as needed
 ];
 

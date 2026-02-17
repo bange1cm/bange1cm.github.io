@@ -1,0 +1,261 @@
+---
+// Leader for Women in Tech component with image carousel and text section
+
+const witImages = [
+	{ src: '/wit/craft.jpg', alt: 'Women in Tech - Craft event' },
+	{ src: '/wit/mcwc3_freshman.jpg', alt: 'Women in Tech - Midwest Collegiate Computing Conference - Freshman year' },
+	{ src: '/wit/micwic.jpg', alt: 'Women in Tech - Michigan Celebration of Women in Computing Conference' },
+	{ src: '/wit/mwc3.jpg', alt: 'Women in Tech - Midwest Collegiate Computing Conference - Junior year' },
+	{ src: '/wit/spartahack11.jpg', alt: 'Women in Tech - SpartaHack 11' },
+	{ src: '/wit/spartahackx.jpg', alt: 'Women in Tech - SpartaHack X' },
+];
+---
+
+<section id="leader-wit" class="leader-wit">
+	<div class="leader-container">
+		<!-- Carousel Section -->
+		<div class="carousel-section">
+			<div class="carousel">
+				<div class="carousel-track" id="carouselTrack">
+					{witImages.map((image) => (
+						<div class="carousel-slide">
+							<img src={image.src} alt={image.alt} />
+						</div>
+					))}
+				</div>
+				<!-- Carousel Controls -->
+				<button class="carousel-button prev" id="prevBtn" aria-label="Previous slide">
+					&#10094;
+				</button>
+				<button class="carousel-button next" id="nextBtn" aria-label="Next slide">
+					&#10095;
+				</button>
+			</div>
+			<!-- Slide Indicators -->
+			<div class="carousel-indicators">
+				{witImages.map((_, index) => (
+					<button class={`indicator ${index === 0 ? 'active' : ''}`} 
+						data-index={index} 
+						aria-label={`Go to slide ${index + 1}`}></button>
+				))}
+			</div>
+		</div>
+
+		<!-- Text Section -->
+		<div class="text-section">
+			<h2 class="section-title">Leader for Women in Tech</h2>
+            <h3 style="margin-bottom: 20px;"><i>Student Organization @ Central Michigan University</i></h3>
+			<p>
+				Women in Tech (WiT) is a student organization at Central Michigan University that aims to empower and support women in the technology field. 
+            </p>   
+            <p>As the <i>Special Projects Chair</i> I have organized informational meetings, workshops, social events, and mini hackathons for our memebers.
+			</p>
+            <p style="margin-bottom: 0;">
+                With WiT I have attended the following events:
+            </p>
+                <ul style="margin-top: 0; margin bottom: 10px;">
+                    <li>Midwest Collegiate Computing Conference (MCCC)</li>
+                    <li>Michigan Celebration of Women in Computing Conference (MICWIC)</li>
+                    <li>Atomic Games</li>
+                    <li>Auto-Owners Tech Summit</li>
+                </ul>
+            <p style="margin-top: 10px;">Through the organization, I have gained valuable leadership experience and built a strong network of peers and mentors in the tech industry.</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.leader-wit {
+		padding: 80px 20px;
+		background-color: #ffffff;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+
+	.section-title {
+		font-size: 2.5em;
+		margin: 0;
+        margin-bottom: 20px;
+		color: #1f2937;
+		text-align: left;
+	}
+
+	.leader-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		align-items: center;
+	}
+
+	/* Carousel Styles */
+	.carousel-section {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.carousel {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 4/3;
+		overflow: hidden;
+		border-radius: 12px;
+		background-color: #f3f4f6;
+	}
+
+	.carousel-track {
+		display: flex;
+		height: 100%;
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.carousel-slide {
+		min-width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	.carousel-slide img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.carousel-button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: rgba(0, 0, 0, 0.5);
+		color: white;
+		border: none;
+		font-size: 1.5em;
+		padding: 10px 15px;
+		cursor: pointer;
+		border-radius: 4px;
+		transition: background-color 0.3s ease;
+		z-index: 10;
+	}
+
+	.carousel-button:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.carousel-button.prev {
+		left: 10px;
+	}
+
+	.carousel-button.next {
+		right: 10px;
+	}
+
+	.carousel-indicators {
+		display: flex;
+		justify-content: center;
+		gap: 8px;
+	}
+
+	.indicator {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		border: none;
+		background-color: #d1d5db;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	.indicator.active {
+		background-color: #1f2937;
+	}
+
+	/* Text Section */
+	.text-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.text-section .section-title {
+		margin-bottom: 5px;
+
+	}
+
+	.text-section p {
+		font-size: 1.05em;
+		line-height: 1.8;
+		color: #4b5563;
+		margin: 0;
+        margin-bottom: 10px;
+	}
+
+    .text-section ul {
+        margin: 10px 0 0 20px;
+        color: #4b5563;
+    }
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.leader-container {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
+
+		.section-title {
+			font-size: 1.8em;
+		}
+
+		.carousel {
+			aspect-ratio: 16/9;
+		}
+	}
+</style>
+
+<script>
+	const track = document.getElementById('carouselTrack');
+	const prevBtn = document.getElementById('prevBtn');
+	const nextBtn = document.getElementById('nextBtn');
+	const indicators = document.querySelectorAll('.indicator');
+	
+	let currentIndex = 0;
+	const slides = document.querySelectorAll('.carousel-slide');
+	const totalSlides = slides.length;
+
+	function updateCarousel() {
+		if (track) {
+			track.style.transform = `translateX(-${currentIndex * 100}%)`;
+		}
+		
+		indicators.forEach((indicator, index) => {
+			indicator.classList.toggle('active', index === currentIndex);
+		});
+	}
+
+	function nextSlide() {
+		currentIndex = (currentIndex + 1) % totalSlides;
+		updateCarousel();
+	}
+
+	function prevSlide() {
+		currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+		updateCarousel();
+	}
+
+	if (prevBtn && nextBtn) {
+		nextBtn.addEventListener('click', nextSlide);
+		prevBtn.addEventListener('click', prevSlide);
+	}
+
+	indicators.forEach((indicator, index) => {
+		indicator.addEventListener('click', () => {
+			currentIndex = index;
+			updateCarousel();
+		});
+	});
+
+	// Auto-rotate carousel every 3 seconds
+	setInterval(nextSlide, 3000);
+</script>

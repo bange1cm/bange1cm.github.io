@@ -5,9 +5,11 @@ export interface Project {
   category: string;
   description: string;
   image?: string;
+  images?: string[];
   video?: string;
   technologies?: string[];
   link?: string;
+  pdf?: string;
   details?: string | string[];
 }
 
@@ -70,8 +72,32 @@ export const projects: Project[] = [
     description:
       "Logo design for the African Forest Elephant. The design incorporates earthy tones and natural elements to reflect the elephant's habitat and conservation efforts.",
     image: "/projects/AfricanForestElephant.png",
-    technologies: ["Adobe Illustrator", "Adobe InDesign"],
+    technologies: ["Adobe Illustrator"],
+    pdf: "/projects/AfricanForestElephant.pdf",
     details: `To be finished`,
+  },
+  {
+    id: "Vases",
+    title: "Vases",
+    category: "Small Projects",
+    description:
+      "Ceramic vases made with coil construction. Vases are inspired by flowers, movement, and bubbles",
+    images: [
+      "/projects/vase1.jpg",
+      "/projects/vase2.jpg",
+      "/projects/vase3.jpg",
+      "/projects/vase4.jpg",
+    ],
+    technologies: ["Ceramics"],
+  },
+  {
+    id: "HorrorProject",
+    title: "Horror Project",
+    category: "Small Projects",
+    description:
+      "A video production project exploring horror themes and storytelling.",
+    video: "https://www.youtube.com/watch?v=example",
+    technologies: ["Video Production"],
   },
 
   // Add more projects as needed

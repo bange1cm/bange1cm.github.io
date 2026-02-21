@@ -18,12 +18,13 @@ export const projects: Project[] = [
     title: "Labs@Home Application",
     category: "UX",
     description:
-      "Labs@Home is a full-stack desktop application designed to help CMU computer science students complete lab assignments using virtual machines, without needing to understand all the technical complexity behind the scenes. This project started from Professor Patrick Seeling’s research on virtualized lab environments and delta files. I took that foundation and built a full-stack application with a strong emphasis on UX-driven development.",
+      "Labs@Home is a full-stack desktop application designed to help CMU computer science students complete lab assignments using virtual machines, without needing to understand all the technical complexity behind the scenes. ",
     image: "/projects/Labs@Home.png",
     video: "https://youtu.be/AZbAEzI8MvU",
     technologies: ["Tauri", "React", "Rust", "React Router", "React Bootstrap"],
     link: "https://github.com/bange1cm/Labs-Home",
-    details: `The Process: 
+    details: `This project started from Professor Patrick Seeling’s research on virtualized lab environments and delta files. I took that foundation and built a full-stack application with a strong emphasis on UX-driven development.
+    The Process: 
 		1. Designed and developed a cross-platform desktop app using Tauri v2
 		2. Built a Rust backend to handle system-level logic like virtual machines and file management
 		3. Created a React frontend focused on minimalism and ease of use
@@ -40,12 +41,13 @@ export const projects: Project[] = [
     title: "HopOff iOS Application",
     category: "Coding",
     description:
-      "An iOS app designed and developed at SpartaHack, Michigan State University’s annual hackathon. With my teammates, I worked to solve the problem of mindless scrolling. People often scroll because they’re bored, tired, or unsure what to do. Our app, HopOff, encourages you to do other activities and reduce your phone usage.",
+      "An iOS app designed and developed at SpartaHack, Michigan State University’s annual hackathon. With my teammates, I worked to solve the problem of mindless scrolling. ",
     image: "/projects/HopOff.png",
     video: "https://www.youtube.com/watch?v=JJGqt5VNKuY",
     technologies: ["Swift", "Xcode"],
     link: "https://lnkd.in/g2mqBxHB",
-    details: `Users pick an app that they want to limit time on and input some activities they would rather (or should…) do, like hobbies, schoolwork, chores, and exercises. They also remove the app they want to use less from their phone home screen, and replace its space with the HopOff app. Because of muscle memory, users will then open HopOff and be suggested an activity instead. Users can always continue to the original app, leaving them in control without any extreme limits. 
+    details: `People often scroll because they’re bored, tired, or unsure what to do. Our app, HopOff, encourages you to do other activities and reduce your phone usage.
+    With HopOff, users pick an app that they want to limit time on and input some activities they would rather (or should…) do, like hobbies, schoolwork, chores, and exercises. They also remove the app they want to use less from their phone home screen, and replace its space with the HopOff app. Because of muscle memory, users will then open HopOff and be suggested an activity instead. Users can always continue to the original app, leaving them in control without any extreme limits. 
 		After lots of struggles with setting up React Native and an Android emulator, we pivoted and built the app for iOS using Xcode and Swift, relying on storyboards to design and manage the interface. Rather than letting technical setbacks stall the project, we embraced the change, adapting and making quick decisions to keep moving. I’m proud of our teamwork and problem solving skills that allowed us to deliver a completed app against all odds.`,
   },
   {

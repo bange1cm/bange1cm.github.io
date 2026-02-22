@@ -70,6 +70,23 @@ export async function getStaticPaths() {
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
 			</div>
+		) : project.images && project.images.length > 0 ? (
+			<div class="project-slideshow">
+				<div class="slideshow-container">
+					{project.images.map((img, idx) => (
+						<div class="slide" id={`slide-${idx}`}>
+							<img src={img} alt={`${project.title} - Image ${idx + 1}`} />
+						</div>
+					))}
+					<a class="prev" onclick="changeSlide(-1)">❮</a>
+					<a class="next" onclick="changeSlide(1)">❯</a>
+				</div>
+				<div class="dots">
+					{project.images.map((_, idx) => (
+						<span class="dot" id={`dot-${idx}`} onclick={`currentSlide(${idx})`}></span>
+					))}
+				</div>
+			</div>
 		) : project.image && (
 			<div class="project-image-large">
 				<img src={project.image} alt={project.title} />
@@ -95,6 +112,13 @@ export async function getStaticPaths() {
 							<span class="tech-item">{tech}</span>
 						))}
 					</div>
+				</section>
+			)}
+
+			{project.pdf && (
+				<section class="project-section">
+					<h2>Download</h2>
+					<a class="button-primary" href={project.pdf} download>Download PDF</a>
 				</section>
 			)}
 
@@ -160,11 +184,10 @@ export async function getStaticPaths() {
 		margin-bottom: 40px;
 		border-radius: 8px;
 		overflow: hidden;
-		background-color: #f3f4f6;
 	}
 
 	.project-image-large img {
-		width: 100%;
+		width: 90%;
 		height: auto;
 		display: block;
 	}
@@ -187,6 +210,84 @@ export async function getStaticPaths() {
 		width: 100%;
 		height: 100%;
 		border: 0;
+	}
+
+	.project-slideshow {
+		width: 100%;
+		margin-bottom: 40px;
+	}
+
+	.slideshow-container {
+		position: relative;
+		width: 100%;
+		background-color: #f3f4f6;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.slide {
+		display: none;
+		width: 100%;
+	}
+
+	.slide img {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: contain;
+	}
+
+	.slide.active {
+		display: block;
+	}
+
+	.prev, .next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		margin-top: -22px;
+		padding: 16px;
+		color: white;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.3s ease;
+		border-radius: 3px;
+		background-color: rgba(0, 0, 0, 0.5);
+		user-select: none;
+		z-index: 10;
+	}
+
+	.next {
+		right: 0;
+	}
+
+	.prev {
+		left: 0;
+	}
+
+	.prev:hover, .next:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.dots {
+		text-align: center;
+		padding: 20px;
+	}
+
+	.dot {
+		cursor: pointer;
+		height: 12px;
+		width: 12px;
+		margin: 0 5px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.3s ease;
+	}
+
+	.dot.active {
+		background-color: var(--color-primary);
 	}
 
 	.project-content {
@@ -243,3 +344,42 @@ export async function getStaticPaths() {
 		background-color: var(--color-primary-hover);
 	}
 </style>
+<script is:inline>
+let slideIndex = 0;
+
+function changeSlide(n) {
+	showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+	showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+	const slides = document.querySelectorAll('.slide');
+	const dots = document.querySelectorAll('.dot');
+	
+	if (slides.length === 0) return;
+	
+	if (n >= slides.length) {
+		slideIndex = 0;
+	}
+	if (n < 0) {
+		slideIndex = slides.length - 1;
+	}
+	
+	slides.forEach(slide => slide.classList.remove('active'));
+	dots.forEach(dot => dot.classList.remove('active'));
+	
+	slides[slideIndex].classList.add('active');
+	if (dots.length > slideIndex) {
+		dots[slideIndex].classList.add('active');
+	}
+}
+
+// Initialize slideshow
+if (document.querySelectorAll('.slide').length > 0) {
+	slideIndex = 0;
+	showSlides(slideIndex);
+}
+</script>

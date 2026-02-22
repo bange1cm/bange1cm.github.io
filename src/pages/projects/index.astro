@@ -1,9 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
-import { projects, getCategories } from '../../data/projects';
+import { projects } from '../../data/projects';
 
-const categories = getCategories();
+const categories = ["UX", "Coding", "Multimedia Design"];
 ---
 
 <Layout>
@@ -11,38 +11,57 @@ const categories = getCategories();
 	<div class="projects-container">
 		<header class="projects-header">
 			<h1>My Projects</h1>
-			<p>Explore my work in UX, software development, graphic design, and other creative explorations!</p>
+			<p>Explore my work in UX and software development, as well as my creative explorations in multimedia design!</p>
 		</header>
 
-		{categories.map(category => (
-			<section class="category-section">
-				<h2>{category}</h2>
-				<div class="projects-grid">
-					{projects.filter(p => p.category === category).map(project => (
-						<a href={`/projects/${project.id}`} class="project-card">
-							<div class="project-image">
-								{project.image ? (
-									<img src={project.image} alt={project.title} />
-								) : (
-									<div class="placeholder">No Image</div>
-								)}
-							</div>
-							<div class="project-content">
-								<h3>{project.title}</h3>
-								<p>{project.description}</p>
-								{project.technologies && project.technologies.length > 0 && (
-									<div class="technologies">
-										{project.technologies.map(tech => (
-											<span class="tech-badge">{tech}</span>
-										))}
+		{categories.map(category => {
+			let filteredProjects = [];
+			let gridClass = "projects-grid";
+			if (category === "Multimedia Design") {
+				// Combine Graphic Design, Small Projects, and projects with relevant technologies
+				const multimediaCategories = ["Graphic Design", "Small Projects"];
+				const multimediaTechs = ["Ceramics", "Video Production", "Photography"];
+				filteredProjects = projects.filter(p =>
+					multimediaCategories.includes(p.category) ||
+					(p.technologies && p.technologies.some(t => multimediaTechs.includes(t)))
+				);
+				gridClass += " multimedia-grid";
+			} else {
+				filteredProjects = projects.filter(p => p.category === category);
+			}
+			return (
+				<section class="category-section">
+					<h2>{category}</h2>
+					<div class={gridClass}>
+						{filteredProjects.map(project => {
+							const imgSrc = project.image || (project.images && project.images.length > 0 ? project.images[0] : null);
+							return (
+								<a href={`/projects/${project.id}`} class="project-card">
+									<div class="project-image">
+										{imgSrc ? (
+											<img src={imgSrc} alt={project.title} />
+										) : (
+											<div class="placeholder">No Image</div>
+										)}
 									</div>
-								)}
-							</div>
-						</a>
-					))}
-				</div>
-			</section>
-		))}
+									<div class="project-content">
+										<h3>{project.title}</h3>
+										<p>{project.description}</p>
+										{project.technologies && project.technologies.length > 0 && (
+											<div class="technologies">
+												{project.technologies.map(tech => (
+													<span class="tech-badge">{tech}</span>
+												))}
+											</div>
+										)}
+									</div>
+								</a>
+							);
+						})}
+					</div>
+				</section>
+			);
+		})}
 	</div>
 </Layout>
 
@@ -85,8 +104,35 @@ const categories = getCategories();
 
 	.projects-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: repeat(3, 1fr);
 		gap: 30px;
+	}
+
+	.multimedia-grid {
+		grid-template-columns: repeat(5, 1fr);
+		gap: 15px;
+	}
+
+	.multimedia-grid .project-image {
+		height: 100px;
+	}
+
+	.multimedia-grid .project-content {
+		padding: 10px;
+	}
+
+	.multimedia-grid .project-content h3 {
+		font-size: 0.9em;
+	}
+
+	.multimedia-grid .project-content p {
+		font-size: 0.8em;
+		margin-bottom: 8px;
+	}
+
+	.multimedia-grid .tech-badge {
+		font-size: 0.7em;
+		padding: 2px 6px;
 	}
 
 	.project-card {

@@ -23,6 +23,7 @@ export const projects: Project[] = [
       "A full-stack desktop application designed to help CMU computer science students complete lab assignments using virtual machines, without needing to understand all the technical complexity behind the scenes. ",
     image: "/projects/Labs@Home.png",
     video: "https://youtu.be/AZbAEzI8MvU",
+    link: "https://github.com/bange1cm/Labs-Home",
     technologies: [
       "Usability Studies",
       "Design Thinking",
@@ -99,7 +100,7 @@ export const projects: Project[] = [
     image: "/projects/HopOff.png",
     video: "https://www.youtube.com/watch?v=JJGqt5VNKuY",
     technologies: ["Swift", "Xcode"],
-    link: "https://lnkd.in/g2mqBxHB",
+    link: "https://devpost.com/software/hopoff?ref_content=my-projects-tab&ref_feature=my_projects",
     details: `People often scroll because they’re bored, tired, or unsure what to do. Our app, HopOff, encourages you to do other activities and reduce your phone usage.
     With HopOff, users pick an app that they want to limit time on and input some activities they would rather (or should…) do, like hobbies, schoolwork, chores, and exercises. They also remove the app they want to use less from their phone home screen, and replace its space with the HopOff app. Because of muscle memory, users will then open HopOff and be suggested an activity instead. Users can always continue to the original app, leaving them in control without any extreme limits. 
 		After lots of struggles with setting up React Native and an Android emulator, we pivoted and built the app for iOS using Xcode and Swift, relying on storyboards to design and manage the interface. Rather than letting technical setbacks stall the project, we embraced the change, adapting and making quick decisions to keep moving. I’m proud of our teamwork and problem solving skills that allowed us to deliver a completed app against all odds.`,

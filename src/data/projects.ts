@@ -53,7 +53,41 @@ export const projects: Project[] = [
       "A redesign of the Auto-Owners Associate expense reporting system, focused on improving usability and streamlining the reporting process for employees.",
     image: "/projects/ExpenseReport.png",
     technologies: ["Axure", "Lucid", "Design Thinking", "Usability Studies"],
-    link: "https://github.com/bange1cm/Labs-Home",
+    details: `TBD`,
+  },
+  {
+    id: "Customer",
+    title: "Customer System",
+    category: "UX",
+    description:
+      "A redesign of the Auto-Owners Associate customer system, focused on improving usability and streamlining the reporting process for employees.",
+    image: "/projects/Customer.png",
+    technologies: [
+      "Design Thinking",
+      "Usability Studies",
+      "Discovery Research",
+      "Interviews",
+    ],
+    details: `TBD`,
+  },
+  {
+    id: "CustomerCenter",
+    title: "Customer Center Studies",
+    category: "UX",
+    description:
+      "A redesign of the Auto-Owners Associate customer center system, focused on improving usability and streamlining the reporting process for employees.",
+    image: "/projects/CustomerCenter.png",
+    technologies: ["Axure", "Lucid", "Design Thinking", "Usability Studies"],
+    details: `TBD`,
+  },
+  {
+    id: "StudyAbroad",
+    title: "Study Abroad Application",
+    category: "UX",
+    description:
+      "A redesign of the Auto-Owners Associate customer center system, focused on improving usability and streamlining the reporting process for employees.",
+    image: "/projects/CustomerCenter.png",
+    technologies: ["Figma", "Personas", "User Journey Mapping"],
     details: `TBD`,
   },
   {
@@ -115,7 +149,7 @@ export const projects: Project[] = [
     description:
       "Award winning Java and JavaFX game focused on pun filled fighting of website bugs.",
     image: "/projects/FamilyFixUp.png",
-    technologies: ["SQL", "PL/SQL"],
+    technologies: ["Java", "JavaFX"],
     details: `As part of an object-oriented programming class at Central Michigan University, we were tasked with creating a project throughout the semester using Java and JavaFX (a GUI library). 
     For our project, we created a short game that would be enjoyable for people interested in software and programming. The premise of the game is tracking down things that are visually wrong with a website that turn out to be bugs, like insect bugs, that you fight in a Pokemon esque fight sequence. The game is filled with little coding puns like this that we had a great time creating and incorporating. 
     The game specifications, backend Java, frontend GUI, testing, and project management were all done by our group. Throughout the project we collaborated, adapted, and problem solved. I ended up taking on a project management like role, doing documentation, overseeing our timeline, and coordinating tasks. 
@@ -128,7 +162,7 @@ export const projects: Project[] = [
     description:
       "Logo design for the African Forest Elephant. The design incorporates earthy tones and natural elements to reflect the elephant's habitat and conservation efforts.",
     image: "/projects/AfricanForestElephant.png",
-    technologies: ["Adobe Illustrator"],
+    technologies: ["Graphic Design"],
     pdf: "/projects/AfricanForestElephant.pdf",
     details: `To be finished`,
   },
@@ -137,11 +171,55 @@ export const projects: Project[] = [
     title: "Alaska Property Management and West Michigan Homes Logos",
     category: "Graphic Design",
     description:
-      "Logo design for the Alaska Property Management and West Michigan Homes. The design incorporates earthy tones and natural elements to reflect the properties' habitats and conservation efforts.",
+      "Logo design for two sister companies in the real estate industry.",
     images: ["/projects/APM.png", "/projects/WMH.png"],
-    technologies: ["Adobe Illustrator"],
+    technologies: ["Graphic Design"],
     pdf: "/projects/WestMichiganPropertyLogo.pdf",
     details: `To be finished`,
+  },
+  {
+    id: "Botanica",
+    title: "Botanica Typeface",
+    category: "Graphic Design",
+    description:
+      "A custom typeface made for a typography class with a focus on botanical and natural elements.",
+    image: "/projects/botanica.png",
+    pdf: "/projects/BotanicaType.pdf",
+    technologies: ["Graphic Design"],
+    details: `To understand and appreciate typography, we were tasked with creating our own typeface. I wanted to create a typeface that was inspired by nature and plants, so I created Botanica. The typeface features leaf and vine elements, as well as 6 icons that can be used as decorative elements (flower pot, shovel, snail, butterflies, plant, mushroom). 
+    Then, to showcase the typeface, I created a sample poster that incorporates the typeface and its botanical elements.`,
+  },
+  {
+    id: "FontsFaithful",
+    title: "Fonts of the Faithful booklet",
+    category: "Graphic Design",
+    description:
+      "A custom typeface made for a typography class with a focus on botanical and natural elements.",
+    image: "/projects/FOTF1.png",
+    pdf: "/projects/FontsOfTheFaithful.pdf",
+    technologies: ["Graphic Design"],
+    details: `TBD`,
+  },
+  {
+    id: "TypographersBooklet",
+    title: "Typographers Booklet",
+    category: "Graphic Design",
+    description:
+      "A custom typeface made for a typography class with a focus on botanical and natural elements.",
+    image: "/projects/TypographersBooklet.png",
+    pdf: "/projects/TypographerBooklet.pdf",
+    technologies: ["Graphic Design"],
+    details: `TBD`,
+  },
+  {
+    id: "WiTLogo",
+    title: "Women in Tech Logo",
+    category: "Graphic Design",
+    description:
+      "Logo design for a student organization at Central Michigan University.",
+    image: "/projects/WiTLogo.png",
+    technologies: ["Graphic Design"],
+    details: `TBD`,
   },
   {
     id: "Vases",
@@ -149,13 +227,10 @@ export const projects: Project[] = [
     category: "Small Projects",
     description:
       "Ceramic vases made with coil construction. Vases are inspired by flowers, movement, and bubbles",
-    images: [
-      "/projects/vase1.jpg",
-      "/projects/vase2.jpg",
-      "/projects/vase3.jpg",
-      "/projects/vase4.jpg",
-    ],
+    images: ["/projects/vaseflower.png", "/projects/vasebubbles.png"],
     technologies: ["Ceramics"],
+    details: `The vases are my first exploration into ceramics. I learned about the process of making clay, its different stages, and glazing. I created the vases using coil construction, which involves rolling out long coils of clay and stacking them to build up the shape. 
+    I enjoyed experimenting with different forms and textures, and learning about the properties of clay throughout the process.`,
   },
   {
     id: "WatchYourBack",
@@ -164,7 +239,32 @@ export const projects: Project[] = [
     description:
       "A video production project exploring horror themes and storytelling.",
     video: "https://youtu.be/5SaPLDKKBS0",
+    images: ["/projects/WatchYourBack.png"],
     technologies: ["Video Production"],
+    details: `For a video production class, we were tasked with taking a very basic script, with almost no plot, and creating a short film. My group decided to create a horror film, and we had a lot of fun brainstorming and executing on the project. We created the shot list, filmed, and edited the video ourselves. 
+    We had a lot of fun with the project, and I’m proud of how it turned out!`,
+  },
+  {
+    id: "PhotoSeries",
+    title: "Student Life Photo Series",
+    category: "Small Projects",
+    description: "A photo series documenting student life on campus.",
+    images: [
+      "/projects/PhotoSeries1.png",
+      "/projects/PhotoSeries2.png",
+      "/projects/PhotoSeries3.png",
+    ],
+    technologies: ["Photography"],
+    details: `For a photography class, we were tasked with creating a photo series documenting student life on campus. I took photos of students in various settings and activities to capture the essence of campus life. The project helped me improve my composition and lighting skills.`,
+  },
+  {
+    id: "StudentInterview",
+    title: "Student Interview",
+    category: "Small Projects",
+    description: "A photo series documenting student life on campus.",
+    image: "/projects/StudentInterview.png",
+    technologies: ["Video Production"],
+    details: `For a video production class, we were tasked with creating a short interview video with a student. I took photos of students in various settings and activities to capture the essence of campus life. The project helped me improve my composition and lighting skills.`,
   },
 
   // Add more projects as needed

@@ -129,7 +129,8 @@ export const projects: Project[] = [
     image: "/projects/AfricanForestElephant.png",
     technologies: ["Graphic Design"],
     pdf: "/projects/AfricanForestElephant.pdf",
-    details: `To be finished`,
+    details: `For a class assignment, we were tasked with creating a logo for an endangered animal that could be used for conservation efforts. After researching different endangered animals, I decided to create a logo for the African Forest Elephant. I wanted to create a logo that was simple, memorable, and reflected the elephant's habitat and conservation efforts.
+    After sketching out different ideas, the final logo was created in Adobe Illustrator.`,
   },
   {
     id: "WestMichiganPropertyLogo",
@@ -139,8 +140,8 @@ export const projects: Project[] = [
       "Logo design for two sister companies in the real estate industry.",
     images: ["/projects/APM.png", "/projects/WMH.png"],
     technologies: ["Graphic Design"],
-    pdf: "/projects/WestMichiganPropertyLogo.pdf",
-    details: `To be finished`,
+    details: `Some of my family owns two sister companies in the real estate industry, Alaska Property Management and West Michigan Homes. I was tasked with creating logos for both companies that would be simple, memorable, and tie the companies together in a cohesive brand identity
+    After sketching out different ideas, the owners chose this logo design, and specified on the colors they wanted to use. The logos were created in Adobe Illustrator, and the logo suite with different size variations were delivered to the owners for use in their marketing materials.`,
   },
   {
     id: "Botanica",
@@ -239,9 +240,11 @@ export const projects: Project[] = [
     title: "Student Interview",
     category: "Video Production",
     description: "A video interview with a student.",
-    image: "/projects/StudentInterview.png",
+    image: "/projects/interview.png",
+    video: "https://youtu.be/C8CVLkxDzNc",
     technologies: ["Video Production"],
-    details: `For a video production class, we were tasked with creating a short interview video with a student. I took photos of students in various settings and activities to capture the essence of campus life. The project helped me improve my composition and lighting skills.`,
+    details: `For a video production class, we were tasked with creating a short interview video with a student about their favorite place on campus. 
+    I focused on capturing good A and B rolls, as well as clear audio.`,
   },
 
   // Add more projects as needed

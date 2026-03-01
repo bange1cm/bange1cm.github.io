@@ -35,8 +35,17 @@ const categories = ["UX", "Coding", "Multimedia Design"];
 					<div class={gridClass}>
 						{filteredProjects.map(project => {
 							const imgSrc = project.image || (project.images && project.images.length > 0 ? project.images[0] : null);
+							// For UX projects, use static page links
+							let href = `/projects/${project.id}`;
+							if (category === "UX") {
+								// Map project.id to your new static filenames
+								if (project.id === "Labs@Home") href = "/projects/labs-at-home";
+								if (project.id === "ExpenseReport") href = "/projects/expense-report";
+								if (project.id === "CustomerCenter") href = "/projects/customer-center";
+								if (project.id === "StudyAbroad") href = "/projects/study-abroad";
+							}
 							return (
-								<a href={`/projects/${project.id}`} class="project-card">
+								<a href={href} class="project-card">
 									<div class="project-image">
 										{imgSrc ? (
 											<img src={imgSrc} alt={project.title} />

@@ -114,6 +114,7 @@ export async function getStaticPaths() {
 					</div>
 				</section>
 			)}
+		</div>
 
 			{project.pdf && (
 				<section class="project-section">
@@ -301,14 +302,12 @@ export async function getStaticPaths() {
 
 	.project-section h2 {
 		font-size: 1.5em;
-		color: var(--text-color);
 		margin-bottom: 15px;
 		border-bottom: 1px solid #d1d5db;
 		padding-bottom: 10px;
 	}
 
 	.project-section p {
-		color: #4b5563;
 		margin: 0 0 15px 0;
 	}
 
@@ -343,7 +342,7 @@ export async function getStaticPaths() {
 	.button:hover {
 		background-color: var(--color-primary-hover);
 	}
-</style>
+	</style>
 <script is:inline>
 let slideIndex = 0;
 

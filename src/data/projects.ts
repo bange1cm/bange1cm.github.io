@@ -14,13 +14,12 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // Coding Projects
   {
     id: "Labs@Home",
     title: "Labs@Home Application",
     category: "UX",
     description:
-      "A full-stack desktop application designed to help CMU computer science students complete lab assignments using virtual machines, without needing to understand all the technical complexity behind the scenes. ",
+      "A full-stack desktop application designed to help CMU computer science students complete lab assignments using virtual machines, without needing to understand all the technical complexity behind the scenes.",
     image: "/projects/Labs@Home.png",
     video: "https://youtu.be/AZbAEzI8MvU",
     link: "https://github.com/bange1cm/Labs-Home",
@@ -33,18 +32,6 @@ export const projects: Project[] = [
       "React Router",
       "React Bootstrap",
     ],
-    details: `This project started from Professor Patrick Seeling’s research on virtualized lab environments and delta files. I took that foundation and built a full-stack application with a strong emphasis on UX-driven development.
-    The Process: 
-		1. Designed and developed a cross-platform desktop app using Tauri v2
-		2. Built a Rust backend to handle system-level logic like virtual machines and file management
-		3. Created a React frontend focused on minimalism and ease of use
-		4. Utilized the 5 step Design Process (Empathize, Define, Ideate, Prototype, Test)
-		5. Applied UX design principles and usability heuristics to create clarity
-		6. Conducted usability testing with real students and iterated based on feedback
-
-		This project challenged me to take a very technical system and design an experience that actually makes sense to users. I’m so excited to have the application utilized in upcoming semesters!
-
-		Huge thanks to Professor Patrick Seeling for the guidance and support throughout this project. Additional thanks to the Central Michigan University Honors Program for supporting this work and funding the poster presentation.`,
   },
   {
     id: "ExpenseReport",
@@ -54,22 +41,6 @@ export const projects: Project[] = [
       "A redesign of the Auto-Owners Associate expense reporting system, focused on improving usability and streamlining the reporting process for employees.",
     image: "/projects/ExpenseReport.png",
     technologies: ["Axure", "Lucid", "Design Thinking", "Usability Studies"],
-    details: `TBD`,
-  },
-  {
-    id: "Customer",
-    title: "Customer System",
-    category: "UX",
-    description:
-      "A redesign of the Auto-Owners Associate customer system, focused on improving usability and streamlining the reporting process for employees.",
-    image: "/projects/Customer.png",
-    technologies: [
-      "Design Thinking",
-      "Usability Studies",
-      "Discovery Research",
-      "Interviews",
-    ],
-    details: `TBD`,
   },
   {
     id: "CustomerCenter",

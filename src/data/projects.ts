@@ -40,7 +40,7 @@ export const projects: Project[] = [
     category: "UX",
     description:
       "A redesign of the Auto-Owners Associate expense reporting system, focused on improving usability and streamlining the reporting process for employees.",
-    image: "/projects/ExpenseReport.png",
+    image: "/projects/expensereports.png",
     technologies: ["Design Thinking", "Axure", "Lucid", "Usability Studies"],
   },
   {

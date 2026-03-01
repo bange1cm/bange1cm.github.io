@@ -12,10 +12,16 @@ import Navigation from '../../components/Navigation.astro';
       <span class="category-badge">UX</span>
     </header>
 
+	<div class="project-image-large">
+		<img src="/projects/expensereports.png" alt="Expense Reporting System" />
+	 </div>
+
     <section class="project-section">
       <h2>Overview</h2>
       <p>A redesign of the Auto-Owners Associate expense reporting system, focused on improving usability and streamlining the reporting process for employees.</p>
-    </section>
+	  <p>As a UX Intern at Auto-Owners Insurance, I was tasked with redesigning the expense reporting system used by employees to submit their expense reports. The existing system was difficult to use and lacked clear documentation, leading to frustration and errors. My goal was to create a more intuitive and user-friendly interface that would simplify the reporting process and improve the overall user experience.</p>
+	  <p>Through user research, usability testing, and iterative design, I was able to identify pain points and areas for improvement in the existing system. I then developed a new design that addressed these issues and provided a more streamlined and efficient reporting process for employees.</p>
+	</section>
 
     <section class="project-section">
       <h2>Technologies Used</h2>
@@ -31,49 +37,48 @@ import Navigation from '../../components/Navigation.astro';
         <h2>Design Process</h2>
         <section class="process-section">
             <h3>The Problem</h3>
-            <p>Professor Patrick Seeling of Central Michigan University wanted to implement a virtual lab framework that allowed students to complete networking and computer science lab work on their own computers using a QEMU-based virtual machine. His research outlined a system using “delta files,” which capture changes made to a virtual machine. The professor could distribute pre-configured lab environments to students through delta files, and students could submit their completed work by sending their own delta files for feedback. </p>
-            <p>While technically sound, the framework required students to manually interact with virtual machines and delta files through a text-based environment. This complexity risked creating a barrier between students and their assignments, shifting focus away from learning objectives and toward technical setup. </p>
-            <p>The challenge was to design a Windows-based desktop application, stored within each student’s CMU network drive, that simplified this process. </p>
+            <p>The expense report system is a poorly designed interface that makes it difficult for employees to submit expense reports. There is limited documentation and user support available. I was tasked with identifying the users, use cases, problems, and opportunities for improvement in the existing system.</p>
+            <p>After interviewing employees, watching them submit reports, and analyzing existing documentation, I identified several key issues:</p>
+            <ul>
+                <li>Confusing navigation to the main reporting interface</li>
+                <li>Discovability within the system was poor</li>
+                <li>Input was being entered multiple times for one report</li>
+                <li>Flow for uploading receipt images was unclear</li>
+				<li>There were too many options within dropdown inputs</li>
+				<li>One system was being used for multiple purposes, causing confusion</li>
+            </ul>
+            <p>Most associates rarely used the system because expenses were not common. However, one group of associates used it regularly as they traveled in company vehicles and needed to submit expense reports for their trips.</p>
+			<p>The challenge was the redesign the system to meet the needs of all users, not just the most frequent ones.</p>
         </section>
 	    <section class="process-section">
 			<h3>Ideate</h3>
 			<div class="process-flex">
 				<div class="process-text">
-					<p>With user needs defined, I began exploring how to simplify a technically complex system (QEMU + delta files) into an intuitive student experience. After mapping out flows and sketching different approaches, I reduced the experience to three simple actions:</p>
-					<ul>
-							<li>Launch current assignment</li>
-							<li>Save assignment</li>
-							<li>Upload professor’s starting file</li>
-					</ul>
-                    <p>Everything else, like delta file management and system commands, would happen behind the scenes.</p>
+					<p>With the problems identified, I began exploring solutions in low fidelity, using crazy 8s and flow diagrams.</p>
+                    <p>As fidelity increased, I refined the interface, pushing the boundaries of what fields were required and how they were presented.</p>
+					<p>The main reporting system was relocated, updating the navigation to be more intuitive.</p>
+					<p>A list of all expense reports was added to the main screen so users could see all their reports at a glance, including the name, date, and amount.</p>
 				</div>
 				<div class="process-image">
-					<img src="/projects/L@H_ideate.png" alt="Ideation sketches for Labs@Home application" id="big-img"/>
+					<img src="/projects/generalideation.png" alt="Ideation sketches for Expense Report system" id="big-img"/>
 				</div>
 			</div>
 			<div class="process-below">
-				<p>I also removed technical language like “overlay files” and “QEMU” from the interface. Students don’t care how their work is stored. They care about completing assignments. My goal became making the system feel straightforward and predictable.</p>
-				<p>While sketcing, I relied heavily on Nielsen’s usability heuristics to guide key decisions:</p>
-				<ul>
-						<li><i>Visibility of system status: </i>The interface clearly shows when something is processing, so students always know what’s happening.</li>
-						<li><i>Error prevention: </i>I added guardrails to prevent issues like launching multiple terminals</li>
-						<li><i>Recognition rather than recall: </i>Important information, like virtual lab login credentials and assignment numbers, is shown directly in the interface so students don’t have to remember it.</li>
-						<li><i>Aestetic and minimal design: </i>I removed technical language and unnecessary elements to keep the interface focused and distraction-free.</li>
-				</ul>
-				<p>The early sketches focused on clarity and reducing friction, especially around assignment progression.</p>
+				<p>The list would be updated to show the status of each report.</p>
+				<p>When creating a new expense report, all information remained on the screen so users could see all relevant information without having to navigate through pages. Dialog boxes and accordian components were used to input information depending on the user's needs.</p>
+				<p>Ideation focused on making navigation and the flow more intuitive, while making the interface feel more streamlined and reducing redundancy.</p>
 			</div>
 		</section>
         <section class="process-section">
             <h3>Prototype</h3>
             <div class="process-flex">
                  <div class="process-text">
-                   <p>Once the flow was outlined, I moved into building the prototype.</p>
-                    <p>I used Tauri with a Rust backend and React frontend. Rust handled system-level operations like launching the virtual machine and merging files. React handled the interface and user interaction.</p>
-                    <p>I built the application iteratively, implementing small pieces and testing them immediately. This helped me catch both technical bugs and usability issues early, instead of discovering them all at the end.</p>
-                    <p>I also added lightweight persistence (JSON files) to track assignment progress and log user actions. This supported usability decisions like displaying assignment numbers and giving users visibility into what had happened.</p>
+                    <p>A prototype was built using Axure RP 11.</p>
+                    <p>During prototyping, I continued to iterate on the interface, refining the layout as things came together.</p>
+					<p>The prototype was built to be as close to the final product as possible, including all functionality and interactions. This allowed for a more accurate usability study and feedback from users.</p>
                 </div>
                 <div class="process-image">  
-                    <img src="/projects/Labs@Home.png" alt="Home page of Labs@Home application" />
+                    <img src="/projects/axure.png" alt="Axure logo" />
                 </div>
             </div>
         </section>
@@ -81,38 +86,24 @@ import Navigation from '../../components/Navigation.astro';
             <h3>Test</h3>
             <div class="process-flex">
 				<div class="process-text">
-                    <p>To validate the design, I conducted a moderated usability study with CMU computer science and IT students. </p>
-                    <p>I wanted to know if they could complete assignments without guidance, and if they understood how to progress to the next assignment. I also wanted to observe where they hesitated or became confused.</p>
-                    <p>Watching students use the app was incredibly insightful. Some issues were technical, but others were purely UX:</p>
+                    <p>To validate the design, I conducted a moderated usability study with associates using my prototype. </p>
+                    <p>I wanted to know if they could find the relocated expense report system, understand the flow, and complete their reports without guidance. I gave each participant two tasks, testing the system's ability to handle regular travelers and less frequent, individual expenses.</p>
+                    <p>Testing revealed two main issues:</p>
+					<ul>
+                    	<li>Inputs, like dates, were still being input multiple times.</li>
+                    	<li>The system still didn't handle both scenarios (regular travelers and less frequent expenses) well.</li>
+                	</ul>
                 </div>
                 <div class="process-image">
-                    <img src="/projects/L@H_test.png" alt="Study session for Labs@Home application" />
+                    <img src="/projects/refinereps.png" alt="Refined system for regular travelers" />
                 </div>
             </div>
             <div class="process-below">
-               
-                <ul>
-                    <li>Students weren’t sure what the “Playground” was.</li>
-                    <li>They didn’t know what the saved file in their Downloads folder represented.</li>
-                    <li>One student navigated away while the virtual machine was still running.</li>
-                    <li>The Help page explained how the system worked, but not what students should actually do.</li>
-                </ul>
-                <p>Based on these observations, I:</p>
-                <ul>
-                    <li>Clarified button emphasis and labels</li>
-                    <li>Renamed saved files to include student IDs</li>
-                    <li>Disabled navigation while the terminal was open</li>
-                    <li>Rewrote Help content to focus on user actions first</li>
-                </ul>
-                <p>Five participants were enough to surface the majority of usability issues and guide meaningful improvements.</p>
+                <p>Based on these observations, I went back to the drawin board and iterated on lower fidelity designs. In the end, breaking the system into two separate systems, one for regular travelers and one for less frequent expenses, was the best solution. Based on the associate's job position, the system would automatically direct them to the appropriate interface. </p>
+				<p>This allowed each system to be optimized for its specific use case, improving usability, removing redudant fields, and reducing cognitive load.</p>
+				<p>After the final iteration, all problems with the original system were resolved, allowing all users to complete their expense reports without issues.</p>
             </div>
       </section>  
-    </section>
-      
-
-    <section class="project-section">
-      <h2>View Project</h2>
-      <a class="button-primary" href="https://github.com/bange1cm/Labs-Home" target="_blank">Visit Project →</a>
     </section>
   </div>
 </Layout>
@@ -298,6 +289,18 @@ import Navigation from '../../components/Navigation.astro';
         }
 	}
 
+	.project-image-large {
+		width: 100%;
+		margin-bottom: 40px;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.project-image-large img {
+		width: 90%;
+		height: auto;
+		display: block;
+	}
  
 
     

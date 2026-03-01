@@ -125,7 +125,7 @@ export const projects: Project[] = [
     title: "African Forest Elephant Logo",
     category: "Graphic Design",
     description:
-      "Logo design for the African Forest Elephant. The design incorporates earthy tones and natural elements to reflect the elephant's habitat and conservation efforts.",
+      "Logo design for the African Forest Elephant, focusing on conservation efforts and its habitat.",
     image: "/projects/AfricanForestElephant.png",
     technologies: ["Graphic Design"],
     pdf: "/projects/AfricanForestElephant.pdf",
@@ -137,7 +137,7 @@ export const projects: Project[] = [
     title: "Alaska Property Management and West Michigan Homes Logos",
     category: "Graphic Design",
     description:
-      "Logo design for two sister companies in the real estate industry.",
+      "Logo design for sister companies in the real estate industry.",
     images: ["/projects/APM.png", "/projects/WMH.png"],
     technologies: ["Graphic Design"],
     details: `Some of my family owns two sister companies in the real estate industry, Alaska Property Management and West Michigan Homes. I was tasked with creating logos for both companies that would be simple, memorable, and tie the companies together in a cohesive brand identity
@@ -160,22 +160,25 @@ export const projects: Project[] = [
     title: "Fonts of the Faithful booklet",
     category: "Graphic Design",
     description:
-      "A custom typeface made for a typography class with a focus on botanical and natural elements.",
+      "A booklet exploring the use of fonts in religious contexts around Michigan.",
     image: "/projects/FOTF/FontsOfTheFaithful.png",
     pdf: "/projects/FOTF/FontsOfTheFaithful.pdf",
     technologies: ["Graphic Design"],
-    details: `TBD`,
+    details: `For a typography class, we were tasked with creating a booklet that studied the use of fonts in a context we chose. I decided on exploring the use of fonts in religious contexts around Michigan. 
+    I visited several religious buildings, including churches, mosques, and temples. The fonts often reflected the history or culture of the belief system.
+    The booklet was designed in Adobe InDesign and explored each religious building.`,
   },
   {
     id: "TypographersBooklet",
     title: "Typographers Booklet",
     category: "Graphic Design",
     description:
-      "A custom typeface made for a typography class with a focus on botanical and natural elements.",
+      "A booklet introducing top typographers and their contributions to typography.",
     image: "/projects/TypeBooklet/TypographerBooklet.png",
     pdf: "/projects/TypeBooklet/BookMockup.pdf",
     technologies: ["Graphic Design"],
-    details: `TBD`,
+    details: `For a typography class, we were tasked with creating a booklet that introduced top typographers and their contributions to the field. I researched and selected several influential typographers, including Herb Lubalin and Jessica Hische. I created a booklet that featured each typographer's background, notable works, and impact on typography. 
+    The booklet was designed in Adobe InDesign and included elements to contribute to the shining stars theme.`,
   },
   {
     id: "WiTLogo",
@@ -185,18 +188,19 @@ export const projects: Project[] = [
       "Logo design for a student organization at Central Michigan University.",
     image: "/projects/WiT.png",
     technologies: ["Graphic Design"],
-    details: `TBD`,
+    details: `The student organization Women in Tech wanted an updated logo that carried over the branding from the past logo, including the pink color and the female symbol. I created a new logo that incorporated these elements, while also adding a monospace font for a coding and tech feel. 
+    The logo was created in Adobe Illustrator, and the final design was delivered to the organization for use in their marketing materials.`,
   },
   {
     id: "Vases",
     title: "Vases",
     category: "Ceramics",
     description:
-      "Ceramic vases made with coil construction. Vases are inspired by flowers, movement, and bubbles",
+      "Ceramic vases made with coil construction. Vases are inspired by flowers, movement, and bubbles.",
     images: ["/projects/vaseflower.png", "/projects/vasebubbles.png"],
     technologies: ["Ceramics"],
     details: `The vases are my first exploration into ceramics. I learned about the process of making clay, its different stages, and glazing. I created the vases using coil construction, which involves rolling out long coils of clay and stacking them to build up the shape. 
-    I enjoyed experimenting with different forms and textures, and learning about the properties of clay throughout the process.`,
+    I enjoyed the process and plan on continuing to explore ceramics!`,
   },
   {
     id: "WatchYourBack",
@@ -239,7 +243,7 @@ export const projects: Project[] = [
     id: "StudentInterview",
     title: "Student Interview",
     category: "Video Production",
-    description: "A video interview with a student.",
+    description: "A video interview with a CMU student.",
     image: "/projects/interview.png",
     video: "https://youtu.be/C8CVLkxDzNc",
     technologies: ["Video Production"],

@@ -35,30 +35,20 @@ export const projects: Project[] = [
   },
   {
     id: "ExpenseReport",
-    title: "Expense Reporting Application",
+    title: "Expense Reporting System",
     category: "UX",
     description:
       "A redesign of the Auto-Owners Associate expense reporting system, focused on improving usability and streamlining the reporting process for employees.",
     image: "/projects/ExpenseReport.png",
-    technologies: ["Axure", "Lucid", "Design Thinking", "Usability Studies"],
+    technologies: ["Design Thinking", "Axure", "Lucid", "Usability Studies"],
   },
   {
-    id: "CustomerCenter",
-    title: "Customer Center Studies",
+    id: "Target0",
+    title: "Target 0 Website",
     category: "UX",
     description:
-      "A redesign of the Auto-Owners Associate customer center system, focused on improving usability and streamlining the reporting process for employees.",
-    image: "/projects/CustomerCenter.png",
-    technologies: ["Axure", "Lucid", "Design Thinking", "Usability Studies"],
-    details: `TBD`,
-  },
-  {
-    id: "StudyAbroad",
-    title: "Study Abroad Application",
-    category: "UX",
-    description:
-      "A redesign of the Auto-Owners Associate customer center system, focused on improving usability and streamlining the reporting process for employees.",
-    image: "/projects/CustomerCenter.png",
+      "UX and UI design for a website that promotes zero food waste practices by reducing waste and changing individual habits.",
+    image: "/projects/target0.png",
     technologies: ["Figma", "Personas", "User Journey Mapping"],
     details: `TBD`,
   },
@@ -122,6 +112,7 @@ export const projects: Project[] = [
       "Award winning Java and JavaFX game focused on pun filled fighting of website bugs.",
     image: "/projects/FamilyFixUp.png",
     technologies: ["Java", "JavaFX"],
+    link: "https://github.com/bange1cm/FinalGame",
     details: `As part of an object-oriented programming class at Central Michigan University, we were tasked with creating a project throughout the semester using Java and JavaFX (a GUI library). 
     For our project, we created a short game that would be enjoyable for people interested in software and programming. The premise of the game is tracking down things that are visually wrong with a website that turn out to be bugs, like insect bugs, that you fight in a Pokemon esque fight sequence. The game is filled with little coding puns like this that we had a great time creating and incorporating. 
     The game specifications, backend Java, frontend GUI, testing, and project management were all done by our group. Throughout the project we collaborated, adapted, and problem solved. I ended up taking on a project management like role, doing documentation, overseeing our timeline, and coordinating tasks. 

@@ -1,0 +1,319 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+---
+
+<Layout>
+  <Navigation />
+  <div class="project-detail-container">
+    <a href="/projects" class="back-link">← Back to Projects</a>
+    <header class="project-header">
+      <h1>Target 0 Website</h1>
+      <span class="category-badge">UX</span>      
+    </header>
+
+    <div class="project-image-large">
+        <img src="/projects/target0.png" alt="Target 0 Website" />
+    </div>
+
+    <section class="project-section">
+      <h2>Overview</h2>
+      <p>UX and UI design for a website that promotes zero food waste practices by reducing waste and changing individual habits.</p>
+    </section>
+
+    <section class="project-section">
+      <h2>Technologies Used</h2>
+      <div class="tech-list">
+        <span class="tech-item">Figma</span>
+        <span class="tech-item">Personas</span>
+        <span class="tech-item">User Journey Mapping</span>
+      </div>
+    </section>
+
+    <section class="project-section">
+        <h2>Design Process</h2>
+        <section class="process-section">
+            <h3>The Problem</h3>
+            <p>Professor Patrick Seeling of Central Michigan University wanted to implement a virtual lab framework that allowed students to complete networking and computer science lab work on their own computers using a QEMU-based virtual machine. His research outlined a system using “delta files,” which capture changes made to a virtual machine. The professor could distribute pre-configured lab environments to students through delta files, and students could submit their completed work by sending their own delta files for feedback. </p>
+            <p>While technically sound, the framework required students to manually interact with virtual machines and delta files through a text-based environment. This complexity risked creating a barrier between students and their assignments, shifting focus away from learning objectives and toward technical setup. </p>
+            <p>The challenge was to design a Windows-based desktop application, stored within each student’s CMU network drive, that simplified this process. </p>
+        </section>
+	    <section class="process-section">
+			<h3>Ideate</h3>
+			<div class="process-flex">
+				<div class="process-text">
+					<p>With user needs defined, I began exploring how to simplify a technically complex system (QEMU + delta files) into an intuitive student experience. After mapping out flows and sketching different approaches, I reduced the experience to three simple actions:</p>
+					<ul>
+							<li>Launch current assignment</li>
+							<li>Save assignment</li>
+							<li>Upload professor’s starting file</li>
+					</ul>
+                    <p>Everything else, like delta file management and system commands, would happen behind the scenes.</p>
+				</div>
+				<div class="process-image">
+					<img src="/projects/L@H_ideate.png" alt="Ideation sketches for Labs@Home application" id="big-img"/>
+				</div>
+			</div>
+			<div class="process-below">
+				<p>I also removed technical language like “overlay files” and “QEMU” from the interface. Students don’t care how their work is stored. They care about completing assignments. My goal became making the system feel straightforward and predictable.</p>
+				<p>While sketcing, I relied heavily on Nielsen’s usability heuristics to guide key decisions:</p>
+				<ul>
+						<li><i>Visibility of system status: </i>The interface clearly shows when something is processing, so students always know what’s happening.</li>
+						<li><i>Error prevention: </i>I added guardrails to prevent issues like launching multiple terminals</li>
+						<li><i>Recognition rather than recall: </i>Important information, like virtual lab login credentials and assignment numbers, is shown directly in the interface so students don’t have to remember it.</li>
+						<li><i>Aestetic and minimal design: </i>I removed technical language and unnecessary elements to keep the interface focused and distraction-free.</li>
+				</ul>
+				<p>The early sketches focused on clarity and reducing friction, especially around assignment progression.</p>
+			</div>
+		</section>
+        <section class="process-section">
+            <h3>Prototype</h3>
+            <div class="process-flex">
+                 <div class="process-text">
+                   <p>Once the flow was outlined, I moved into building the prototype.</p>
+                    <p>I used Tauri with a Rust backend and React frontend. Rust handled system-level operations like launching the virtual machine and merging files. React handled the interface and user interaction.</p>
+                    <p>I built the application iteratively, implementing small pieces and testing them immediately. This helped me catch both technical bugs and usability issues early, instead of discovering them all at the end.</p>
+                    <p>I also added lightweight persistence (JSON files) to track assignment progress and log user actions. This supported usability decisions like displaying assignment numbers and giving users visibility into what had happened.</p>
+                </div>
+                <div class="process-image">  
+                    <img src="/projects/Labs@Home.png" alt="Home page of Labs@Home application" />
+                </div>
+            </div>
+        </section>
+        <section class="process-section">
+            <h3>Test</h3>
+            <div class="process-flex">
+				<div class="process-text">
+                    <p>To validate the design, I conducted a moderated usability study with CMU computer science and IT students. </p>
+                    <p>I wanted to know if they could complete assignments without guidance, and if they understood how to progress to the next assignment. I also wanted to observe where they hesitated or became confused.</p>
+                    <p>Watching students use the app was incredibly insightful. Some issues were technical, but others were purely UX:</p>
+                </div>
+                <div class="process-image">
+                    <img src="/projects/L@H_test.png" alt="Study session for Labs@Home application" />
+                </div>
+            </div>
+            <div class="process-below">
+               
+                <ul>
+                    <li>Students weren’t sure what the “Playground” was.</li>
+                    <li>They didn’t know what the saved file in their Downloads folder represented.</li>
+                    <li>One student navigated away while the virtual machine was still running.</li>
+                    <li>The Help page explained how the system worked, but not what students should actually do.</li>
+                </ul>
+                <p>Based on these observations, I:</p>
+                <ul>
+                    <li>Clarified button emphasis and labels</li>
+                    <li>Renamed saved files to include student IDs</li>
+                    <li>Disabled navigation while the terminal was open</li>
+                    <li>Rewrote Help content to focus on user actions first</li>
+                </ul>
+                <p>Five participants were enough to surface the majority of usability issues and guide meaningful improvements.</p>
+            </div>
+      </section>  
+    </section>
+      
+
+    <section class="project-section">
+      <h2>View Project</h2>
+      <a class="button-primary" href="https://github.com/bange1cm/Labs-Home" target="_blank">Visit Project →</a>
+    </section>
+  </div>
+</Layout>
+
+<style>
+.project-detail-container {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 40px 20px;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+
+	.back-link {
+		display: inline-block;
+		color: var(--color-dark);
+		text-decoration: none;
+		margin-bottom: 30px
+		font-weight: 500;
+		transition: color 0.2s;
+		text-decoration: underline;
+	}
+
+	.back-link:hover {
+		color: var(--color-secondary);
+	}
+
+	.project-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 30px;
+		border-bottom: 2px solid #e5e7eb;
+		padding-bottom: 20px;
+	}
+
+	.project-header h1 {
+		margin: 0;
+		font-size: 2.5em;
+		color: #1f2937;
+	}
+
+	.category-badge {
+		display: inline-block;
+		background-color: var(--color-light);
+		color: var(--text-color);
+		padding: 8px 16px;
+		border-radius: 20px;
+		font-size: 0.9em;
+		font-weight: 600;
+	}
+
+	.project-video {
+		width: 100%;
+		height: 0;
+		padding-bottom: 56.25%;
+		position: relative;
+		margin-bottom: 40px;
+		border-radius: 8px;
+		overflow: hidden;
+		background-color: #000;
+	}
+
+	.project-video iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
+	.project-content {
+		font-size: 1.05em;
+		line-height: 1.8;
+	}
+
+	.project-section {
+		margin-bottom: 40px;
+	}
+
+	.project-section h2 {
+		font-size: 1.5em;
+		margin-bottom: 15px;
+		border-bottom: 1px solid #d1d5db;
+		padding-bottom: 10px;
+	}
+
+	.project-section p {
+		margin: 0 0 15px 0;
+	}
+
+	.tech-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.tech-item {
+		display: inline-block;
+		background-color: var(--color-light);
+		color: var(--text-color);
+		padding: 8px 16px;
+		border-radius: 6px;
+		font-weight: 500;
+		border: 1px solid var(--color-border);
+	}
+
+	.button {
+		display: inline-block;
+		padding: 12px 24px;
+		text-decoration: none;
+		border-radius: 6px;
+		transition: background-color 0.2s;
+		border: none;
+		cursor: pointer;
+		font-size: 1em;
+		font-weight: 600;
+	}
+
+	.button:hover {
+		background-color: var(--color-primary-hover);
+	}
+    
+    .ul .li{
+        padding-left: 50px;
+    }
+
+    .process-section {
+        margin-bottom: 60px;
+    }
+    
+    .process-flex {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		align-items: flex-start;
+	}
+	.process-text {
+		flex: 1 1 320px;
+		min-width: 0;
+	}
+	.process-image {
+		flex: 1 1 400px;
+		min-width: 320px;
+		max-width: 700px;
+		align-self: center;
+	}
+	.process-image img {
+		width: 100%;
+		height: auto;
+		max-width: 700px;
+		max-height: 600px;
+		border-radius: 16px;
+		box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+		object-fit: contain;
+	}
+
+	ol, ul {
+        margin-bottom: 18px;
+		margin-top: 8px;
+        padding-left: 30px !important;
+    }
+
+	li {
+		margin-bottom: 10px;
+		padding-left: 4px;
+	}
+
+	@media (min-width: 900px) {
+		.process-flex {
+			flex-direction: row;
+			align-items: flex-start;
+			gap: 48px;
+		}
+		.process-text, .process-image {
+			max-width: 50%;
+		}
+		.process-image {
+			align-self: flex-start;
+		}
+        #big-img {
+            width: 120%;
+        }
+	}
+
+    .project-image-large {
+		width: 100%;
+		margin-bottom: 40px;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.project-image-large img {
+		width: 90%;
+		height: auto;
+		display: block;
+        margin: auto;
+	}
+    
+
+</style>

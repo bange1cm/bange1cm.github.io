@@ -11,6 +11,7 @@ export interface Project {
   link?: string;
   pdf?: string;
   details?: string | string[];
+  captions?: string[];
 }
 
 export const projects: Project[] = [
@@ -19,7 +20,7 @@ export const projects: Project[] = [
     title: "Labs@Home Application",
     category: "UX",
     description:
-      "A full-stack desktop application designed to help CMU computer science students complete lab assignments using virtual machines, without needing to understand all the technical complexity behind the scenes.",
+      "A full-stack desktop application designed to help CMU computer science students complete lab assignments using virtual machines.",
     image: "/projects/Labs@Home.png",
     video: "https://youtu.be/AZbAEzI8MvU",
     link: "https://github.com/bange1cm/Labs-Home",
@@ -78,7 +79,8 @@ export const projects: Project[] = [
     details: `After spending too much time on phones during road trips, we wanted to create a competition to encourage passangers to look out the window and enjoy the scenery.
     For our project, we created an interface for fun road trip game called "My Cows!" In this game, different players keep track of how many cows they spot on the trip, and are able increase their cows, decrease other players' cows, and turn their cows into hamburgers. The goal is to have as many hamburgers as possible at the end of the road trip. We did not invent the road trip game but instead made a website for users to be able create and join games, making keeping track of everyone's cows much easier and more fun!
 	On the technical side, we used next.js framework and used convex for our backend database. Our graphics and our database were set up by my teammates. 
-	I really enjoyed taking the project from the ground up by deciding how the game would be translated to a mobile version, what features were required, and what we needed to do to ensure a good game. After outlining the specs, I spent most of my time creating the front end with React. `,
+	I really enjoyed taking the project from the ground up by deciding how the game would be translated to a mobile version, what features were required, and what we needed to do to ensure a good game. After outlining the specs, I spent most of my time creating the front end with React. 
+  With only 24 hours to complete the project, we were able to create a functional and fun game that we were proud of.`,
   },
   {
     id: "CustomerAPI",
@@ -158,8 +160,8 @@ export const projects: Project[] = [
     category: "Graphic Design",
     description:
       "A custom typeface made for a typography class with a focus on botanical and natural elements.",
-    image: "/projects/FOTF1.png",
-    pdf: "/projects/FontsOfTheFaithful.pdf",
+    image: "/projects/FOTF/FontsOfTheFaithful.png",
+    pdf: "/projects/FOTF/FontsOfTheFaithful.pdf",
     technologies: ["Graphic Design"],
     details: `TBD`,
   },
@@ -169,8 +171,8 @@ export const projects: Project[] = [
     category: "Graphic Design",
     description:
       "A custom typeface made for a typography class with a focus on botanical and natural elements.",
-    image: "/projects/TypographersBooklet.png",
-    pdf: "/projects/TypographerBooklet.pdf",
+    image: "/projects/TypeBooklet/TypographerBooklet.png",
+    pdf: "/projects/TypeBooklet/BookMockup.pdf",
     technologies: ["Graphic Design"],
     details: `TBD`,
   },
@@ -180,14 +182,14 @@ export const projects: Project[] = [
     category: "Graphic Design",
     description:
       "Logo design for a student organization at Central Michigan University.",
-    image: "/projects/WiTLogo.png",
+    image: "/projects/WiT.png",
     technologies: ["Graphic Design"],
     details: `TBD`,
   },
   {
     id: "Vases",
     title: "Vases",
-    category: "Small Projects",
+    category: "Ceramics",
     description:
       "Ceramic vases made with coil construction. Vases are inspired by flowers, movement, and bubbles",
     images: ["/projects/vaseflower.png", "/projects/vasebubbles.png"],
@@ -198,7 +200,7 @@ export const projects: Project[] = [
   {
     id: "WatchYourBack",
     title: "Watch Your Back",
-    category: "Small Projects",
+    category: "Video Production",
     description:
       "A video production project exploring horror themes and storytelling.",
     video: "https://youtu.be/5SaPLDKKBS0",
@@ -210,21 +212,33 @@ export const projects: Project[] = [
   {
     id: "PhotoSeries",
     title: "Student Life Photo Series",
-    category: "Small Projects",
+    category: "Photography",
     description: "A photo series documenting student life on campus.",
     images: [
-      "/projects/PhotoSeries1.png",
-      "/projects/PhotoSeries2.png",
-      "/projects/PhotoSeries3.png",
+      "/projects/photography/series1.jpg",
+      "/projects/photography/series2.jpg",
+      "/projects/photography/series3.jpg",
+      "/projects/photography/series4.jpg",
+      "/projects/photography/series5.jpg",
+      "/projects/photography/series6.jpg",
+    ],
+    captions: [
+      "Olivia Johnson poses in her apartment in Mount Pleasant, Michigan, Friday, November 1, 2024. Olivia is a student at Central Michigan University and is studying Speech Language Pathology",
+      "Olivia Johnson attends CSD 551, Autism Spectrum Disorders: A Clinical Focus, taught by Professor MaryBeth Smith on the campus of Central Michigan University, Mount Pleasant, Michigan, Tuesday, November 5, 2024. The class focuses on how to interact with individuals who have autism in the context of speech interventions.",
+      "Olivia Johnson studies in the library on the campus of Central Michigan University, Mount Pleasant, Michigan, Friday, November 22, 2024. Olivia is finishing up her last year of undergrad and preparing to go to grad school next year.",
+      "Olivia Johnson, left, and Dakota Krahulik, right, walk out of Health Professions Building, on the campus of Central Michigan University, Mount Pleasant, Michigan, Thursday, November 14, 2024. The two have classes together in speech language pathology and have become friends.",
+      "Olivia Johnson, middle, chats with roommates Marissa Weaver, left, and Kate Schmidt, right, over dinner at their apartment in Mount Pleasant, Michigan, Tuesday, November 19, 2024. The dinner topics included updates about their favorite tv shows and the upcoming Central Michigan University vs Western Michigan University football game.",
+      "Olivia Johnson, second from the left, talks to friends, from right to left, Annie Beech, Jordan Oklo, Hadley Nobliski , and Sarah Lator at Community Church, Mount Pleasant, Michigan, Tuesday, November 12, 2024. Olivia regularly attends a young adult's church service on Tuesday nights at Community Church.",
     ],
     technologies: ["Photography"],
-    details: `For a photography class, we were tasked with creating a photo series documenting student life on campus. I took photos of students in various settings and activities to capture the essence of campus life. The project helped me improve my composition and lighting skills.`,
+    details: `For a photojournalism class, we were tasked with creating a photo series documenting a student's life on campus. I took photos of the same student, Olivia Johnson, during her natural routines, capturing her daily life and interactions. 
+    The project helped me improve my composition and lighting skills. as well as my ability to tell a story through images.`,
   },
   {
     id: "StudentInterview",
     title: "Student Interview",
-    category: "Small Projects",
-    description: "A photo series documenting student life on campus.",
+    category: "Video Production",
+    description: "A video interview with a student.",
     image: "/projects/StudentInterview.png",
     technologies: ["Video Production"],
     details: `For a video production class, we were tasked with creating a short interview video with a student. I took photos of students in various settings and activities to capture the essence of campus life. The project helped me improve my composition and lighting skills.`,

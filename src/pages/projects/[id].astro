@@ -63,35 +63,40 @@ export async function getStaticPaths() {
 			<span class="category-badge">{project.category}</span>
 		</header>
 
-		{project.video ? (
-			<div class="project-video">
-				<iframe src={getYouTubeEmbed(project.video)} title={project.title}
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
-			</div>
-		) : project.images && project.images.length > 0 ? (
-			<div class="project-slideshow">
-				<div class="slideshow-container">
-					{project.images.map((img, idx) => (
-						<div class="slide" id={`slide-${idx}`}>
-							<img src={img} alt={`${project.title} - Image ${idx + 1}`} />
-						</div>
-					))}
-					<a class="prev" onclick="changeSlide(-1)">❮</a>
-					<a class="next" onclick="changeSlide(1)">❯</a>
-				</div>
-				<div class="dots">
-					{project.images.map((_, idx) => (
-						<span class="dot" id={`dot-${idx}`} onclick={`currentSlide(${idx})`}></span>
-					))}
-				</div>
-			</div>
-		) : project.image && (
-			<div class="project-image-large">
-				<img src={project.image} alt={project.title} />
-			</div>
-		)}
+		   {project.video ? (
+			   <div class="project-video">
+				   <iframe src={getYouTubeEmbed(project.video)} title={project.title}
+					   frameborder="0"
+					   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					   allowfullscreen></iframe>
+			   </div>
+		   ) : Array.isArray(project.images) && project.images.length > 0 ? (
+			   <div class="project-slideshow">
+				   <div class="slideshow-container">
+					   {project.images.map((img, idx) => (
+						   <div class="slide" id={`slide-${idx}`}> 
+							   <img src={img} alt={`${project.title} - Image ${idx + 1}`} />
+							   {/* Only show captions for PhotoSeries */}
+							   {project.id === "PhotoSeries" && Array.isArray(project.captions) && project.captions[idx] && (
+								   <div class="slide-caption">{project.captions[idx]}</div>
+							   )}
+						   </div>
+					   ))}
+					   <a class="prev" onclick="changeSlide(-1)">❮</a>
+					   <a class="next" onclick="changeSlide(1)">❯</a>
+				   </div>
+				   <div class="dots">
+					   {Array.isArray(project.images) && project.images.map((_, idx) => (
+						   <span class="dot" id={`dot-${idx}`}
+							   onclick={`currentSlide(${idx})`}></span>
+					   ))}
+				   </div>
+			   </div>
+		   ) : project.image && (
+			   <div class="project-image-large">
+				   <img src={project.image} alt={project.title} />
+			   </div>
+		   )}
 
 		<div class="project-content">
 			<section class="project-section">
@@ -221,7 +226,6 @@ export async function getStaticPaths() {
 	.slideshow-container {
 		position: relative;
 		width: 100%;
-		background-color: #f3f4f6;
 		border-radius: 8px;
 		overflow: hidden;
 	}
@@ -231,12 +235,26 @@ export async function getStaticPaths() {
 		width: 100%;
 	}
 
-	.slide img {
-	width: 100%;
-	height: auto;
-	display: block;
-	object-fit: contain;
-	}
+	   .slide img {
+	   width: 100%;
+	   height: auto;
+	   display: block;
+	   object-fit: contain;
+	   }
+
+	   .slide-caption {
+		   margin-top: 12px;
+		   text-align: center;
+		   font-size: 1.1em;
+		   color: #444;
+		   background: rgba(255,255,255,0.85);
+		   padding: 8px 12px;
+		   border-radius: 6px;
+		   max-width: 90%;
+		   margin-left: auto;
+		   margin-right: auto;
+		   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+	   }
 
 	.slide.active {
 		display: block;

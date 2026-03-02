@@ -71,17 +71,20 @@ import Navigation from '../../components/Navigation.astro';
 		</section>
         <section class="process-section">
             <h3>Prototype</h3>
-            <div class="process-flex">
-                 <div class="process-text">
-                    <p>A prototype was built using Axure RP 11.</p>
-                    <p>During prototyping, I continued to iterate on the interface, refining the layout as things came together.</p>
-					<p>The prototype was built to be as close to the final product as possible, including all functionality and interactions. This allowed for a more accurate usability study and feedback from users.</p>
-                </div>
-                <div class="process-image">  
-                    <img src="/projects/axure.png" alt="Axure logo" />
-                </div>
-            </div>
+			<p>A prototype was built using Axure RP 11.</p>
+            <p>During prototyping, I continued to iterate on the interface, refining the layout as things came together.</p>
+			<p><i>The prototype below shows the interface for less frequent expenses after refinements due to feedback from usability testing.</i></p>	
         </section>
+	</section>
+		<div class="prototype-container">
+			<iframe
+				src="https://ss1v4k.axshare.com/?g=4"
+				width="100%"
+				height="800"
+				frameborder="0"
+			></iframe>
+		</div>
+	<section class="project-section"></section>
         <section class="process-section">
             <h3>Test</h3>
             <div class="process-flex">
@@ -101,6 +104,8 @@ import Navigation from '../../components/Navigation.astro';
             <div class="process-below">
                 <p>Based on these observations, I went back to the drawin board and iterated on lower fidelity designs. In the end, breaking the system into two separate systems, one for regular travelers and one for less frequent expenses, was the best solution. Based on the associate's job position, the system would automatically direct them to the appropriate interface. </p>
 				<p>This allowed each system to be optimized for its specific use case, improving usability, removing redudant fields, and reducing cognitive load.</p>
+				<p><i>The sketch shows the design for a weekly report for regular travelers.</i></p>
+				<br>
 				<p>After the final iteration, all problems with the original system were resolved, allowing all users to complete their expense reports without issues.</p>
             </div>
       </section>  
@@ -302,6 +307,15 @@ import Navigation from '../../components/Navigation.astro';
 		display: block;
 	}
  
+	.prototype-container {
+		/* Make the prototype wider than the parent container */
+		width: 120%;
+		max-width: none;
+		margin-top: 40px;
+		margin-left: -10%; /* Pull it out to the left to center visually */
+		border-radius: 8px;
+		overflow: hidden;
+	}
 
     
 

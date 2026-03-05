@@ -19,6 +19,7 @@ import Navigation from '../../components/Navigation.astro';
     <section class="project-section">
       <h2>Overview</h2>
       <p>UX and UI design for a website that promotes zero food waste practices by reducing waste and changing individual habits.</p>
+	  <p>I conducted subject research, created user personas, mapped user journeys, and designed an engaging interface that would encourage sustainable food practices.</p>
     </section>
 
     <section class="project-section">
@@ -34,88 +35,52 @@ import Navigation from '../../components/Navigation.astro';
         <h2>Design Process</h2>
         <section class="process-section">
             <h3>The Problem</h3>
-            <p>Professor Patrick Seeling of Central Michigan University wanted to implement a virtual lab framework that allowed students to complete networking and computer science lab work on their own computers using a QEMU-based virtual machine. His research outlined a system using “delta files,” which capture changes made to a virtual machine. The professor could distribute pre-configured lab environments to students through delta files, and students could submit their completed work by sending their own delta files for feedback. </p>
-            <p>While technically sound, the framework required students to manually interact with virtual machines and delta files through a text-based environment. This complexity risked creating a barrier between students and their assignments, shifting focus away from learning objectives and toward technical setup. </p>
-            <p>The challenge was to design a Windows-based desktop application, stored within each student’s CMU network drive, that simplified this process. </p>
+			<p>For a UX class project, we were tasked with acting as a UX and UI consultant for a client who wanted to promote sustainable food practices. They wanted the website to feature <a href="https://www.bbcearth.com/news/7-day-no-food-waste-challenge">the BBC Earth 7-day no food waste challenge</a>.</p>
+			<p>We received little guidance on the website requirements or user needs. To make the website engaging, we were tasked with adding unique features that would keep the user coming back.</p>
         </section>
 	    <section class="process-section">
 			<h3>Ideate</h3>
 			<div class="process-flex">
 				<div class="process-text">
-					<p>With user needs defined, I began exploring how to simplify a technically complex system (QEMU + delta files) into an intuitive student experience. After mapping out flows and sketching different approaches, I reduced the experience to three simple actions:</p>
-					<ul>
-							<li>Launch current assignment</li>
-							<li>Save assignment</li>
-							<li>Upload professor’s starting file</li>
-					</ul>
-                    <p>Everything else, like delta file management and system commands, would happen behind the scenes.</p>
+					<p>I started by researching competing websites and identifying the target audience. </p>
+					<p>In competing websites, I noticed they included statistics, had posts of information, and encouraged users to share the posts on social media.</p>
+					<p>However, there seemed to be only a focus on the environment or sustainability conferences. The websites didn't focus on creating a community around the 7-day no food waste challenge or provide additional tips. There seemed to be a gap in addressing the social aspect of the challenge.</p>
+
 				</div>
 				<div class="process-image">
-					<img src="/projects/L@H_ideate.png" alt="Ideation sketches for Labs@Home application" id="big-img"/>
+					<div id="slideshow-container" style="position:relative;">
+						<img id="slideshow-img" src="/projects/persona1.png" alt="Persona for Target 0" style="width:100%; border-radius:16px; box-shadow:0 4px 24px rgba(0,0,0,0.13); object-fit:contain; max-width:700px; max-height:600px;" />
+						<button id="prev-slide" class="carousel-button prev" >&#10094;</button>
+						<button id="next-slide" class="carousel-button next" >&#10095;</button>
+					</div>
 				</div>
 			</div>
 			<div class="process-below">
-				<p>I also removed technical language like “overlay files” and “QEMU” from the interface. Students don’t care how their work is stored. They care about completing assignments. My goal became making the system feel straightforward and predictable.</p>
-				<p>While sketcing, I relied heavily on Nielsen’s usability heuristics to guide key decisions:</p>
-				<ul>
-						<li><i>Visibility of system status: </i>The interface clearly shows when something is processing, so students always know what’s happening.</li>
-						<li><i>Error prevention: </i>I added guardrails to prevent issues like launching multiple terminals</li>
-						<li><i>Recognition rather than recall: </i>Important information, like virtual lab login credentials and assignment numbers, is shown directly in the interface so students don’t have to remember it.</li>
-						<li><i>Aestetic and minimal design: </i>I removed technical language and unnecessary elements to keep the interface focused and distraction-free.</li>
-				</ul>
-				<p>The early sketches focused on clarity and reducing friction, especially around assignment progression.</p>
+				<p>I identified the target audience to be environmentally conscious individuals and those who are lower income and want to reduce food waste to save money.</p>
+				<p>With this understanding, I created two personas to guide the design process.</p>
+				<p>To address the social aspect of the challenge, I decided to add a blog section for users to share tips and stories about each challenge as well as a knowledge base for Target 0 to provide educational resources.</p>
+				<p>To encourage engagement, within the home page, users would be encouraged to participate in the challenge and explore the blog and knowledge base.</p>
+			</div>
+			<div class="figma-container">
+				<h4>Wireframing</h4>
+				<p>I took the website through low and high fidelity wireframes, focusing on the layout and user flow.</p>
+				<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="300" src="https://embed.figma.com/design/JgzxfNvXARm4uApPKlTojJ/Midterm-UX?node-id=0-1&embed-host=share" allowfullscreen></iframe>
 			</div>
 		</section>
+		<br>
         <section class="process-section">
             <h3>Prototype</h3>
-            <div class="process-flex">
-                 <div class="process-text">
-                   <p>Once the flow was outlined, I moved into building the prototype.</p>
-                    <p>I used Tauri with a Rust backend and React frontend. Rust handled system-level operations like launching the virtual machine and merging files. React handled the interface and user interaction.</p>
-                    <p>I built the application iteratively, implementing small pieces and testing them immediately. This helped me catch both technical bugs and usability issues early, instead of discovering them all at the end.</p>
-                    <p>I also added lightweight persistence (JSON files) to track assignment progress and log user actions. This supported usability decisions like displaying assignment numbers and giving users visibility into what had happened.</p>
-                </div>
-                <div class="process-image">  
-                    <img src="/projects/Labs@Home.png" alt="Home page of Labs@Home application" />
-                </div>
-            </div>
-        </section>
-        <section class="process-section">
-            <h3>Test</h3>
-            <div class="process-flex">
-				<div class="process-text">
-                    <p>To validate the design, I conducted a moderated usability study with CMU computer science and IT students. </p>
-                    <p>I wanted to know if they could complete assignments without guidance, and if they understood how to progress to the next assignment. I also wanted to observe where they hesitated or became confused.</p>
-                    <p>Watching students use the app was incredibly insightful. Some issues were technical, but others were purely UX:</p>
-                </div>
-                <div class="process-image">
-                    <img src="/projects/L@H_test.png" alt="Study session for Labs@Home application" />
-                </div>
-            </div>
-            <div class="process-below">
-               
-                <ul>
-                    <li>Students weren’t sure what the “Playground” was.</li>
-                    <li>They didn’t know what the saved file in their Downloads folder represented.</li>
-                    <li>One student navigated away while the virtual machine was still running.</li>
-                    <li>The Help page explained how the system worked, but not what students should actually do.</li>
-                </ul>
-                <p>Based on these observations, I:</p>
-                <ul>
-                    <li>Clarified button emphasis and labels</li>
-                    <li>Renamed saved files to include student IDs</li>
-                    <li>Disabled navigation while the terminal was open</li>
-                    <li>Rewrote Help content to focus on user actions first</li>
-                </ul>
-                <p>Five participants were enough to surface the majority of usability issues and guide meaningful improvements.</p>
-            </div>
-      </section>  
+            <p>After finalizing the wireframes, I created a high-fidelity prototype in Figma. </p>
+			<p>The prototype included a home page, blog section, knowledge base, about page, and an explanation of the 7-day challenge, as well as a navigation bar and footer for easy access to different sections of the website.</p>
+			<p>Lorem ipsum text was used for placeholder content.</p>
+		</section>
+        
     </section>
       
 
     <section class="project-section">
       <h2>View Project</h2>
-      <a class="button-primary" href="https://github.com/bange1cm/Labs-Home" target="_blank">Visit Project →</a>
+      <a class="button-primary" href="https://www.figma.com/proto/uAypVZmtgV5fjzgOAgH9BL/Midterm-Prototype?node-id=71-173&t=3p9GWn9oUGc4rpqL-1" target="_blank">Open Prototype in Figma</a>
     </section>
   </div>
 </Layout>
@@ -314,6 +279,68 @@ import Navigation from '../../components/Navigation.astro';
 		display: block;
         margin: auto;
 	}
+
+	.carousel-button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: rgba(0, 0, 0, 0.5);
+		color: white;
+		border: none;
+		font-size: 1.2em;
+		padding: 10px;
+		cursor: pointer;
+		border-radius: 2px;
+		transition: background-color 0.3s ease;
+		z-index: 10;
+	}
+
+	.carousel-button:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.carousel-button.prev {
+		left: -35px;
+	}
+
+	.carousel-button.next {
+		right: -35px;
+	}
+
+	.figma-container {
+	width: 100%;
+	height: 800px;
+	margin-bottom: 80px;
+	}
+
+	.figma-container iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+	}
     
 
 </style>
+
+<script>
+  const images = [
+    '/projects/persona1.png',
+    '/projects/persona2.png'
+  ];
+  let current = 0;
+  window.addEventListener('DOMContentLoaded', () => {
+    const imgEl = document.getElementById('slideshow-img');
+    const prevBtn = document.getElementById('prev-slide');
+    const nextBtn = document.getElementById('next-slide');
+    if (imgEl && prevBtn && nextBtn) {
+      prevBtn.onclick = () => {
+        current = (current - 1 + images.length) % images.length;
+        imgEl.src = images[current];
+      };
+      nextBtn.onclick = () => {
+        current = (current + 1) % images.length;
+        imgEl.src = images[current];
+      };
+    }
+  });
+</script>

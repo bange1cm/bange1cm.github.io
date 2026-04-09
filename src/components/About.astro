@@ -56,18 +56,19 @@ import Image from "astro/components/Image.astro";
 		text-align: center;
 	}
 
-	.image-placeholder {
-		width: 250px;
-		height: 312.5px;
-		margin: 0 auto 15px;
-		border-radius: 12px;
-		background: white;
-		border: 2px solid #e5e7eb;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		overflow: hidden;
-	}
+	   .image-placeholder {
+		   width: 100%;
+		   max-width: 250px;
+		   aspect-ratio: 4/5;
+		   height: auto;
+		   margin: 0 auto 15px;
+		   border-radius: 12px;
+		   background: white;
+		   border: 2px solid #e5e7eb;
+		   display: block;
+		   object-fit: cover;
+		   overflow: hidden;
+	   }
 
 	.image-placeholder svg {
 		width: 100%;
@@ -80,19 +81,34 @@ import Image from "astro/components/Image.astro";
 		font-size: 0.9em;
 	}
 
-	@media (max-width: 768px) {
-		.about-container {
-			grid-template-columns: 1fr;
-			gap: 30px;
-		}
+	   @media (max-width: 1024px) and (min-width: 769px) {
+		   .about-container {
+			   grid-template-columns: 1fr 1fr;
+			   gap: 36px;
+		   }
+		   .image-placeholder {
+			   max-width: 320px;
+			   width: 100%;
+			   aspect-ratio: 4/5;
+			   height: auto;
+		   }
+	   }
 
-		.about-content h2 {
-			font-size: 1.8em;
-		}
+	   @media (max-width: 768px) {
+		   .about-container {
+			   grid-template-columns: 1fr;
+			   gap: 30px;
+		   }
 
-		.image-placeholder {
-			width: 200px;
-			height: 200px;
-		}
-	}
+		   .about-content h2 {
+			   font-size: 1.8em;
+		   }
+
+		   .image-placeholder {
+			   max-width: 240px;
+			   width: 100%;
+			   aspect-ratio: 1/1;
+			   height: auto;
+		   }
+	   }
 </style>

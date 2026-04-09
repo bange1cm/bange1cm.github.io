@@ -203,6 +203,17 @@ export const projects: Project[] = [
     I enjoyed the process and plan on continuing to explore ceramics!`,
   },
   {
+    id: "FlowerBouquet",
+    title: "Flower Bouquet",
+    category: "Ceramics",
+    description:
+      "Ceramic flower bouquet designed after my wedding bouquet. ",
+    image: "/projects/flower_pottery.png",
+    technologies: ["Ceramics"],
+    details: `The top and bottom come apart to reveal a hidden compartment in the middle.
+    Slab building was used to create the top and bottom, and the flowers were individually hand built before being attacked to the bouquet. The bouquet was glazed with a glossy white glaze to give it a clean and elegant look.`,
+  },
+  {
     id: "WatchYourBack",
     title: "Watch Your Back",
     category: "Video Production",
